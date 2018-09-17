@@ -1,0 +1,25 @@
+.main {
+  @mixin clear;
+  @mixin container;
+}
+
+.main__sidebar {
+  margin-top: 3rem;
+
+  @media (--lg) {
+    width: 30%;
+    max-width: 20rem;
+    float: left;
+    clear: left;
+  }
+}
+
+.main__content {
+  margin-bottom: 3rem;
+
+  @media (--lg) {
+    width: 65%;
+    float: right;
+    clear: right;
+  }
+}

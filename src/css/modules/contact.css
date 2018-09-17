@@ -1,0 +1,22 @@
+.contact {
+  /* empty */
+}
+
+.contact__image {
+  margin: 2rem auto 0;
+  border-radius: 50%;
+}
+
+.contact__text {
+  @mixin h5;
+
+  margin: 2rem 0 0;
+}
+
+.contact__name {
+  color: var(--gold);
+}
+
+.contact__phone {
+  font-weight: 400;
+}

@@ -1,0 +1,80 @@
+.form {
+  margin: 3rem 0;
+}
+
+.form__row {
+  margin: 2rem 0;
+}
+
+.form__label {
+  @mixin h6;
+
+  display: block;
+  margin: 0 0 0.25rem;
+}
+
+.form__row span {
+  @media (--md) {
+    float: left;
+  }
+}
+
+.form__row span + span {
+  @media (--md) {
+    float: left;
+    margin-left: 2rem;
+  }
+}
+
+.form__input,
+.form__select {
+  max-width: 100%;
+  height: 2.8125rem;
+  padding: 0 1rem;
+  border: 0.0625rem solid var(--blue);
+  border-radius: 0;
+  background-color: var(--white);
+  color: var(--blue);
+}
+
+.form__multi__select {
+  max-width: 100%;
+  padding: 0 1rem;
+  border: 0.0625rem solid var(--blue);
+  border-radius: 0;
+  background-color: var(--white);
+  color: var(--blue);
+}
+
+.form__select {
+  padding-right: 3.5rem;
+  background-image: svg-load('icon-caret.svg', fill: var(--blue));
+  background-repeat: no-repeat;
+  background-position: calc(100% - 1rem) center;
+  background-size: 1.5rem 1.5rem;
+  appearance: none;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+.form__radio,
+.form__checkbox {
+  display: inline-block;
+  margin-right: 2rem;
+
+  & input {
+    margin-right: 0.5rem;
+    vertical-align: middle;
+  }
+}
+
+.form__float {
+  float: left;
+  clear: left;
+  margin-right: 2rem;
+}

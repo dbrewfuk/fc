@@ -1,0 +1,120 @@
+body {
+  color: var(--blue);
+  font-family: var(--sans-serif);
+  font-size: 1.125rem;
+  line-height: 1.55;
+}
+
+h1 {
+  @mixin h1;
+}
+
+h2 {
+  @mixin h2;
+}
+
+h3 {
+  @mixin h3;
+}
+
+h4 {
+  @mixin h4;
+}
+
+h5,
+.h5 {
+  @mixin h5;
+}
+
+h6 {
+  @mixin h6;
+}
+
+a {
+  @mixin link;
+}
+
+.text-intro {
+  @mixin text-intro;
+}
+
+.text-caption {
+  @mixin text-caption;
+}
+
+.text-large {
+  @mixin text-large;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-columns {
+  margin: 1rem 0;
+
+  @media (--md) {
+    column-count: 2;
+    column-gap: 2rem;
+  }
+
+  & > :first-child {
+    margin-top: 0;
+  }
+}
+
+.text-columns--3 {
+  @media (--md) {
+    column-count: 3;
+  }
+}
+
+.text-columns--4 {
+  @media (--md) {
+    column-count: 4;
+  }
+}
+
+.heading--flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.heading--tight {
+  margin-top: 1rem;
+}
+
+.heading--flush {
+  margin-top: 0;
+
+  @media (--lg) {
+    margin-top: 1rem;
+    margin-bottom: 0;
+  }
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 12rem;
+  background-color: #252424;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 7px 7px;
+  position: absolute;
+  font-weight: 500;
+  z-index: 1;
+  font-size: 0.8rem;
+  right: 105%;
+  text-transform: none;
+  letter-spacing: 0rem;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}

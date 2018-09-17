@@ -1,0 +1,9 @@
+{% set hslider = [0, 1, 2, 3] %}
+
+<div class="hslider hslider--bg" role="complementary" aria-label="hSlider Content Name">
+  <div class="hslider__items">
+    {% for item in hslider %}
+      {% include "modules/testimonial.html" %}
+    {% endfor %}
+  </div>
+</div>

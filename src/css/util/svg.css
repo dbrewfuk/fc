@@ -1,0 +1,26 @@
+.svg {
+  display: block;
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+  }
+
+  & svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+[class*='svg--icon-']::before {
+  padding-top: 100%;
+}
+
+@mixin svg-add logo-maysville, 212, 130;
+@mixin svg-add logo-maysville-text, 188.146, 43.189;
+@mixin svg-add logo-system, 748.15, 14.148;
+@mixin svg-add logo-system-stacked, 302.798, 36.004;

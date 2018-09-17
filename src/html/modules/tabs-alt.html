@@ -1,0 +1,23 @@
+{% set tabs = ['News', 'Events'] %}
+
+<div class="tabs tabs--alt">
+  <div class="tabs__nav tabs__nav--alt">
+    {% for tab in tabs %}
+      <button class="tabs__button tabs__button--left">{{ tab }}</button>
+    {% endfor %}
+  </div>
+  <div class="tabs__content tabs__content--alt">
+    {% for tab in tabs %}
+      <div class="tabs__item">
+        <div class="grid grid--4 grid--flush grid--scroll">
+          {% for j in range(0, 4) %}
+            {% include "modules/card-white.html" %}
+          {% endfor %}
+        </div>
+        <p class="text-center margin-top">
+          <a href="#" class="button button--white">More {{ tab }}</a>
+        </p>
+      </div>
+    {% endfor %}
+  </div>
+</div>

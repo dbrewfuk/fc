@@ -1,0 +1,63 @@
+{% set page = { title: 'Universal'} %}
+
+{% extends "templates/default.html" %}
+
+{% block body %}
+
+{% include "modules/breadcrumbs.html" %}
+
+<main class="main" id="main-content">
+
+  <div class="main__sidebar">
+    <h3>Section Heading</h3>
+    <ul class="link-list">
+      <li>
+        <a href="#" class="link-list__link link-list__link--current">Sapiente, et.</a>
+        <ul class="link-list__sublist">
+          <li><a href="#" class="link-list__link">Asperiores, repellat?</a></li>
+          <li><a href="#" class="link-list__link">Enim, accusantium.</a></li>
+          <li><a href="#" class="link-list__link">Ipsam, cumque.</a></li>
+        </ul>
+      </li>
+      <li><a href="#" class="link-list__link">Asperiores, repellat?</a></li>
+      <li><a href="#" class="link-list__link">Enim, accusantium.</a></li>
+      <li><a href="#" class="link-list__link">Ipsam, cumque.</a></li>
+    </ul>
+  </div>
+
+  <div class="main__content">
+    <h1>Active Page (H1)</h1>
+    <img src="//placehold.it/900x600" alt="placeholder">
+    <h2>This is a subhead (H2)</h2>
+    <p class="text-intro">Illum esse optio tempore magni illo culpa neque in nobis maiores rem voluptatibus odio quo quia libero tenetur, assumenda minus veritatis. Provident possimus adipisci, aliquam, soluta architecto ipsam natus a excepturi! Atque obcaecati labore quisquam suscipit architecto sequi doloremque mollitia dolorum, reiciendis hic quos, ipsa perferendis sit accusantium.</p>
+    <h3>Subhead (H3)</h3>
+    <p>Consequatur ipsa iste similique delectus, esse nulla placeat numquam consequuntur vel cupiditate autem. Recusandae ullam incidunt non veniam culpa ratione ab <a href="#">voluptas excepturi debitis</a>, sint alias unde obcaecati ducimus exercitationem numquam fugiat quaerat magni repellat itaque libero sed nihil! Nisi vero quasi veritatis voluptate optio repellendus possimus vel ut nostrum dignissimos culpa odio ipsa ratione magni tempore incidunt, modi aliquid, obcaecati, laudantium officia. Repudiandae?</p>
+    <p>Consequatur sint, iusto voluptate beatae architecto rerum ea rem vero ducimus similique temporibus a, inventore, quisquam quos magni eos delectus. Dignissimos sed obcaecati aliquid nisi ea nihil odit corporis recusandae mollitia dolorem, eum at maxime expedita vel. Blanditiis dolore rem quae, doloribus, sit consectetur quisquam eius ab et vero, cupiditate quibusdam harum placeat vitae ad voluptas eaque nemo doloremque recusandae. Voluptatum dignissimos repellendus molestias!</p>
+    <div class="text-columns">
+      <p>Amet dicta repellendus veniam corrupti molestias deserunt voluptates asperiores repellat aperiam. Odit modi corporis officia reiciendis, beatae quisquam molestias sapiente. Quas aperiam eos ea expedita voluptate ab explicabo reiciendis velit quod, facilis sequi reprehenderit, provident qui.</p>
+      <p>Dolorem incidunt labore assumenda sit, est quasi! Repellendus totam labore fugit, at error, rem nam delectus fuga deserunt voluptas repellat quod voluptate odio reprehenderit similique? Voluptatem ab omnis, molestias, suscipit quia vitae voluptas ducimus aliquid et!</p>
+    </div>
+    <div class="text-columns text-columns--3">
+      <p>Omnis voluptates a quasi ut nam quidem nisi dolorum suscipit velit molestiae rerum, ab ipsum unde cupiditate dolore, sed veniam impedit. Officia commodi sunt, quam, ab saepe repellendus repellat inventore facere porro eos dignissimos optio voluptatum.</p>
+      <p>Velit quasi sapiente libero vel maiores tempore ullam id deleniti recusandae voluptates exercitationem, ea quas nesciunt, eius minima temporibus, cupiditate dolores natus qui! Corrupti error repellat, ad deserunt, eum ducimus voluptas nesciunt non, fugit tempore assumenda!</p>
+      <p>Deserunt unde eius exercitationem officiis et illo voluptatum quae odio sunt atque culpa reprehenderit nisi eligendi id, error, recusandae voluptates eum quasi porro vel, impedit, cumque neque rerum! Provident eius harum, assumenda officia nihil porro sapiente!</p>
+    </div>
+    <h3 class="heading--flex">Invitation to Bid <a class="icon-link icon-link--right icon-link--alt icon-link--rss" href="#">RSS</a></h3>
+    {% include "modules/table.html" %}
+    {% include "modules/video-embed.html" %}
+    <h3>Accordion Style</h3>
+    {% include "modules/accordion.html" %}
+    {% include "modules/cta.html" %}
+    {% include "modules/form.html" %}
+  </div>
+
+  <div class="main__sidebar">
+    <h3>Related Links</h3>
+    {% include "modules/link-list.html" %}
+    {% include "modules/card.html" %}
+    {% include "modules/card-tall.html" %}
+  </div>
+
+</main>
+
+{% endblock %}

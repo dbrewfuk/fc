@@ -1,0 +1,117 @@
+.alert {
+  background-color: var(--blue);
+  color: var(--white);
+  border-bottom: 0.5rem solid var(--gold);
+  overflow: hidden;
+}
+
+.alert--overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--blue-overlay);
+  overflow: auto;
+  z-index: 4;
+}
+
+.alert__container {
+  @mixin container;
+
+  display: flex;
+  position: relative;
+
+  @nest .alert--overlay & {
+    max-width: 64rem;
+
+    @media (--md) {
+      position: static;
+    }
+  }
+}
+
+.alert__icon {
+  position: absolute;
+  top: 2rem;
+  flex-shrink: 0;
+  width: 1.5rem;
+  color: var(--gold);
+
+  @media (--md) {
+    position: relative;
+    top: auto;
+    width: 4rem;
+  }
+
+  @nest .alert--overlay & {
+    @media (--md) {
+      align-self: flex-start;
+      margin-top: 9.5rem;
+    }
+  }
+}
+
+.alert__text {
+  padding: 4.5rem 0 0.5rem 0;
+
+  @media (--md) {
+    padding-top: 0.5rem;
+    padding-right: 1rem;
+    padding-left: 2rem;
+  }
+
+  @nest .alert--overlay & {
+    padding-bottom: 3rem;
+
+    @media (--md) {
+      padding-top: 8rem;
+      padding-right: 6rem;
+      padding-bottom: 8rem;
+    }
+  }
+}
+
+.alert__title {
+  margin: 1rem 0;
+}
+
+.alert__meta {
+  @mixin text-caption;
+
+  margin-top: 4rem;
+  margin-bottom: 0;
+
+  & + * {
+    margin: 1rem 0;
+  }
+}
+
+.alert__close {
+  flex-shrink: 0;
+  width: 3.5rem;
+  height: 3.5rem;
+  margin-top: 1rem;
+  margin-right: -1rem;
+  margin-left: -2.5rem;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  background-image: svg-load('icon-x.svg', stroke: var(--white));
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 1.5rem 1.5rem;
+
+  @media (--md) {
+    margin-left: 0;
+  }
+
+  @nest .alert--overlay & {
+    @media (--md) {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      margin: 0;
+    }
+  }
+}

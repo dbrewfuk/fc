@@ -1,0 +1,42 @@
+.link-list {
+  @mixin text-subnav;
+
+  margin: 0 0 2rem;
+  padding: 0;
+  border-top: 0.5rem solid var(--gold);
+  list-style: none;
+}
+
+.link-list__link {
+  display: block;
+  padding: 0.5rem 1.5rem 0.5rem 0;
+  border-bottom: 0.0625rem solid var(--gold);
+  transition: padding var(--transition), background-color var(--transition), color var(--transition);
+
+  &:hover {
+    padding-right: 0;
+    padding-left: 1.5rem;
+    border-bottom-width: 0.0625rem;
+    background-color: var(--blue);
+    color: var(--white);
+  }
+}
+
+.link-list__link--current {
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 0.625rem;
+    height: 0.625rem;
+    margin-right: 0.5rem;
+    border-radius: 50%;
+    background-color: var(--gold);
+  }
+}
+
+.link-list__sublist {
+  margin: 0;
+  padding: 0 0 0 1.5rem;
+  border: 0;
+  list-style: none;
+}

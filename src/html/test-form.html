@@ -1,0 +1,494 @@
+{% set page = { title: 'Universal'} %}
+
+{% extends "templates/default.html" %}
+
+{% block body %}
+
+{% include "modules/breadcrumbs.html" %}
+
+<script type="text/javascript" src="https://kctcsonline.hobsonsradius.com//crm/javascript/jquery/js/jquery-min.js"></script>
+<script type="text/javascript" src="https://kctcsonline.hobsonsradius.com//crm/javascript/jquery/js/jquery-ui-min.js"></script>
+<script type="text/javascript">
+  // <![CDATA[
+  jQuery.noConflict();
+  // ]]>
+</script>
+<script type="text/javascript" src="https://kctcsonline.hobsonsradius.com/crm/javascript/jquery/plugins/jquery.json.min.js"></script>
+<script type="text/javascript" src="https://kctcsonline.hobsonsradius.com/crm/javascript/iw.js"></script>
+<script type="text/javascript" src="https://kctcsonline.hobsonsradius.com/crm/javascript/IWFormValidator.js"></script>
+<script type="text/javascript" src="https://kctcsonline.hobsonsradius.com/crm/javascript/uitypes.js"></script>
+<script type="text/javascript" src="https://kctcsonline.hobsonsradius.com/crm/javascript/html.js"></script>
+<script type="text/javascript" src="https://kctcsonline.hobsonsradius.com/crm/javascript/countrystate.js"></script>
+<script type="text/javascript" src="https://kctcsonline.hobsonsradius.com/crm/javascript/fielddep.js"></script>
+<script type="text/javascript" src="https://kctcsonline.hobsonsradius.com/crm/javascript/inlinelookup.js"></script>
+<!-- this is the modified formsruntime.js, if something breaks, check changes to this from Hobson's server formsruntime.js first -->
+<script type="text/javascript" src="https://webassets.kctcs.edu/_resources/js/formsruntime-redesign.js"></script>
+<script type="text/javascript" src="https://kctcsonline.hobsonsradius.com/crm/javascript/jquery/plugins/jquery.bjax.js"></script>
+<!-- begin - these two scripts have to be added to set the serverURL and runtimeURL in formsruntime.js -->
+<script type="text/javascript">
+  // <![CDATA[
+  var serverURL = "https://kctcsonline.hobsonsradius.com";
+  // ]]>
+</script>
+<script type="text/javascript">
+  // <![CDATA[
+  jQuery(function() {
+    var runtimeURL = _IW.FormsRuntime.getRuntimeURL();
+    _IW.FormsRuntime.setRuntimeURL(serverURL + runtimeURL);
+    _IW.FormsRuntime.setServerURL(serverURL);
+    _IW.FormsRuntime.setRemoteAjax(true);
+  });
+  
+  // ]]>
+</script>
+<!-- end -->
+<script type="text/javascript">
+  // <![CDATA[
+  var _each = function(array, fn, scope)
+  {
+    for (var i = 0; i < array.length; i++)
+    {
+      if (fn.call(scope || array[i], array[i], i, array) === false)
+      return i;
+    }
+  }
+  
+  var addConditionalDisplay = function(sectionId, logic)
+  {    // Make sure we're 'ready' before continuing..
+  var args = arguments;
+  jQuery(function() {
+    _addConditionalDisplay.apply(this, args);
+  });
+}
+
+var _addConditionalDisplay = function(sectionId, logic)
+{
+  // For each field that controls this section, add a callback
+  var crit = logic.criteria;
+  
+  if (!crit)
+  return;
+  
+  _each(crit, function(oneCrit)
+  {
+    if (oneCrit.htmlid)
+    {
+      if (_IW.UITypes.isGPMultiSelect(oneCrit.htmlid))
+      {
+        _IW.UITypes.groupMultiSelectOnChange(oneCrit.htmlid, function()
+        {
+          _doConditionalDisplay(sectionId, logic);
+        });
+      }
+      else
+      {
+        jQuery(document.getElementById(oneCrit.htmlid)).change(function()
+        {
+          _doConditionalDisplay(sectionId, logic);
+        });
+      }
+    }
+  });
+  
+  // Fire it right away to set the initial state
+  _doConditionalDisplay(sectionId, logic);
+}
+
+var _doConditionalDisplay = function(sectionId, logic)
+{
+  if (_evalConditions(logic))
+  {        jQuery(document.getElementById(sectionId)).removeClass('conditionallyHidden');
+}
+else
+{        jQuery(document.getElementById(sectionId)).addClass('conditionallyHidden');
+}
+}
+
+var _evalConditions = function(logic)
+{
+  for (var i = 0; i < logic.criteria.length; i++)
+  {
+    var oneCrit = logic.criteria[i];
+    
+    // If we don't have an htmlid, then that means the field
+    // is missing and we'll treat the condition as 'FALSE'.
+    // Note that this may not be technically correct for
+    // check-box fields.
+    if (!oneCrit.htmlid)
+    var pass = false;
+    else
+    var pass = _checkFieldValue(oneCrit.htmlid, oneCrit.values);
+    if (pass)
+    {
+      if (logic.match == 'any')
+      return true;
+    }
+    else
+    {
+      if (logic.match == 'all')
+      return false;
+    }
+  }
+  
+  return logic.match == 'all';
+}
+
+var _checkFieldValue = function(field, values)
+{
+  if (_IW.UITypes.isGPMultiSelect(field))
+  {
+    var val = _IW.UITypes.getGroupMultiSelectValues(field);
+    
+    for (var prop in values)
+    {
+      if (values.hasOwnProperty(prop))
+      {
+        var haystack = val[prop];
+        var needles = values[prop];
+        
+        if (haystack)
+        {
+          for (var i = 0; i < haystack.length; i++)
+          {
+            for (var j = 0; j < needles.length; j++)
+            {
+              if (haystack[i] == needles[j])
+              return true;
+            }
+          }
+        }
+      }
+    }
+  }
+  else
+  {
+    var val = _IW.FormsRuntime.getElementValue(document.getElementById(field));
+    
+    if (! jQuery.isArray(values))
+    values = [ values ];
+    
+    if (! jQuery.isArray(val))
+    val = [ val ];
+    
+    for (var i = 0; i < val.length; i++)
+    {
+      for (var j = 0; j < values.length; j++)
+      {
+        if (val[i] == values[j])
+        return true;
+      }
+    }
+  }
+  
+  return false;
+}
+
+// ]]>
+</script>
+<script type="text/javascript" src="https://kctcsonline.hobsonsradius.com/crm/javascript/appformruntime.js"></script>
+<script type="text/javascript" src="https://kctcsonline.hobsonsradius.com/crm/javascript/jquery/plugins/jquery.formatCurrency-1.4.0.js"></script>
+<script type="text/javascript" src="https://kctcsonline.hobsonsradius.com/crm/javascript/jquery/plugins/i18n/jquery.formatCurrency.all.js"></script>
+<script type="text/javascript">
+  // <![CDATA[
+	// Form Loader
+	var l_timeout = 20000;
+	var l_start = new Date().getTime();
+	var l_current = l_start;
+	var pollLoader = function(){
+		clearTimeout(l_t);
+		l_current = new Date().getTime();
+		if((l_current - l_start) < l_timeout){
+			if((typeof _IW == "undefined") || (typeof _IW.FormsRuntime == "undefined") || (typeof _IW.FormsRuntime.isLoaded() == "undefined")){
+				if(document.getElementById("loading")){
+					document.getElementById("loading-mask").className = "run";
+					document.getElementById("loading-wrapper").className = "run";
+          l_t = setTimeout("pollLoader()", 500);
+				}
+			}
+			else{
+				document.getElementById("loading-mask").className = "";
+				document.getElementById("loading-wrapper").className = "";
+			}
+		}
+		else{
+      document.getElementById("loading-mask").className = "timeout";
+      document.getElementById("loading-wrapper").className = "timeout";
+      document.getElementById("loading-text").innerHTML = "This form is currently not available.  We apologize for the inconvenience.";
+		}
+	}
+	var l_t = setTimeout("pollLoader()", 2000);
+  
+  // ]]>
+</script>
+<style>
+  #hidden.request-info {
+    display: none;
+  }
+  .form__input {
+    width: 100%;
+  }
+  
+  .form__row span {
+    float: left;
+  }
+  
+  .form__row span + span {
+    margin-left: 2rem;
+  }
+</style>
+<div id="form-wrapper">
+  <form action="javascript:void(0);" onsubmit="javascript:return true;" target="_dummy">
+    <div>
+      <div>
+        <div>
+          <div class="grid-container grid-container-narrow">
+            <div class="grid grid--2">
+              <div class="form__row">
+                <label for="Contacts.584000000003015" class="form__label">First Name</label>
+                <input class="form__input" id="Contacts.584000000003015" name="Contacts.584000000003015" type="text" value="" placeholder="First Name (required)" maxlength="40"/><script type="text/javascript">
+                  // <![CDATA[
+                  _IW.FormValidator.addTextFieldValidator("Contacts.584000000003015", "notEmpty", null, { trim: true, isReqFunc: true });
+                  // ]]>
+                </script>
+              </div>
+              <div class="form__row">
+                <label for="Contacts.584000000003017" class="form__label">Last Name</label>
+                <input class="form__input" id="Contacts.584000000003017" name="Contacts.584000000003017" type="text" value="" placeholder="Last Name (required)" maxlength="80"/><script type="text/javascript">
+                  // <![CDATA[
+                  _IW.FormValidator.addTextFieldValidator("Contacts.584000000003017", "notEmpty", null, { trim: true, isReqFunc: true });
+                  // ]]>
+                </script>
+              </div>
+              <div class="form__row">
+                <label for="Contacts.584000000003021" class="form__label">Email</label>
+                <input class="form__input" id="Contacts.584000000003021" name="Contacts.584000000003021" type="email" value="" placeholder="Email (required)" maxlength="100"/><script type="text/javascript">
+                  // <![CDATA[
+                  _IW.FormValidator.addTextFieldValidator("Contacts.584000000003021", "validEmail", null, { trim: true, emptyvalid: true });
+                  // ]]>
+                </script>
+                <script type="text/javascript">
+                  // <![CDATA[
+                  _IW.FormValidator.addTextFieldValidator("Contacts.584000000003021", "notEmpty", null, { trim: true, isReqFunc: true });
+                  // ]]>
+                </script>
+              </div>
+              <div class="form__row">
+                <label for="Contacts.584000000003027" class="form__label">Phone</label>
+                <input class="form__input" id="Contacts.584000000003027" name="Contacts.584000000003027" type="text" value="" placeholder="Phone " maxlength="50" style="width: 100%;"/><script type="text/javascript">
+                  // <![CDATA[
+                  _IW.FormValidator.addTextFieldValidator("Contacts.584000000003027", "notEmpty", null, { trim: true, isReqFunc: true, disabled: true });
+                  // ]]>
+                </script>
+              </div>
+              
+              <div class="form__row">
+                <label for="Contacts.584000000003063" class="form__label">Street Address</label>
+                <input class="form__input" id="Contacts.584000000003063" name="Contacts.584000000003063" type="text" placeholder="Street Address " value="" maxlength="250"/><script type="text/javascript">
+                  // <![CDATA[
+                  _IW.FormValidator.addTextFieldValidator("Contacts.584000000003063", "notEmpty", null, { trim: true, isReqFunc: true, disabled: true });
+                  // ]]>
+                </script>
+              </div>
+              <div class="form__row">
+                <label for="Contacts.584000000003065" class="form__label">City</label>
+                <input class="form__input" id="Contacts.584000000003065" name="Contacts.584000000003065" type="text" value="" placeholder="City "/><script type="text/javascript">
+                  // <![CDATA[
+                  _IW.FormValidator.addTextFieldValidator("Contacts.584000000003065", "notEmpty", null, { trim: true, isReqFunc: true, disabled: true });
+                  // ]]>
+                </script>
+              </div>
+              <div class="form__row">
+                <span>
+                  <label for="Contacts.584000048432013" class="form__label">State</label>
+                  <select class="form__select" name="Contacts.584000048432013" id="Contacts.584000048432013" onChange="processConditionalSection(this);">
+                    <option value=""></option>
+                    <option value="AL">AL</option>
+                    <option value="AK">AK</option>
+                    <option value="AZ">AZ</option>
+                    <option value="AR">AR</option>
+                    <option value="CA">CA</option>
+                    <option value="CO">CO</option>
+                    <option value="CT">CT</option>
+                    <option value="DE">DE</option>
+                    <option value="FL">FL</option>
+                    <option value="GA">GA</option>
+                    <option value="HI">HI</option>
+                    <option value="ID">ID</option>
+                    <option value="IL">IL</option>
+                    <option value="IN">IN</option>
+                    <option value="IA">IA</option>
+                    <option value="KS">KS</option>
+                    <option value="KY" selected="selected">KY</option>
+                    <option value="LA">LA</option>
+                    <option value="ME">ME</option>
+                    <option value="MD">MD</option>
+                    <option value="MA">MA</option>
+                    <option value="MI">MI</option>
+                    <option value="MN">MN</option>
+                    <option value="MS">MS</option>
+                    <option value="MO">MO</option>
+                    <option value="MT">MT</option>
+                    <option value="NE">NE</option>
+                    <option value="NV">NV</option>
+                    <option value="NH">NH</option>
+                    <option value="NJ">NJ</option>
+                    <option value="NM">NM</option>
+                    <option value="NY">NY</option>
+                    <option value="NC">NC</option>
+                    <option value="ND">ND</option>
+                    <option value="OH">OH</option>
+                    <option value="OK">OK</option>
+                    <option value="OR">OR</option>
+                    <option value="PA">PA</option>
+                    <option value="RI">RI</option>
+                    <option value="SC">SC</option>
+                    <option value="SD">SD</option>
+                    <option value="TN">TN</option>
+                    <option value="TX">TX</option>
+                    <option value="UT">UT</option>
+                    <option value="VT">VT</option>
+                    <option value="VA">VA</option>
+                    <option value="WA">WA</option>
+                    <option value="WV">WV</option>
+                    <option value="WI">WI</option>
+                    <option value="WY">WY</option>
+                    <option value="DC">DC</option>
+                  </select>
+                  <script type="text/javascript">
+                    // <![CDATA[
+                    _IW.FormValidator.addSingleSelectValidator("Contacts.584000048432013", "Please select 1 item", { isReqFunc: true, disabled: true });
+                    // ]]>
+                  </script>
+                </span>
+                <span>
+                  <label for="Contacts.584000000003067" class="form__label">Zip Code</label>
+                  <input class="form__input" id="Contacts.584000000003067" name="Contacts.584000000003067" type="text" value="" placeholder="Zip Code" /><script type="text/javascript">
+                    // <![CDATA[
+                    _IW.FormValidator.addTextFieldValidator("Contacts.584000000003067", "notEmpty", null, { trim: true, isReqFunc: true, disabled: true });
+                    // ]]>
+                  </script>
+                </span>
+              </div>
+              <div class="request-info" id="hidden">
+                <label title="Anticipated Start Term" style="width:15em;" for="Registrations.584000064839003" class="top">Anticipated Start Term</label>
+                <select name="Registrations.584000064839003" id="Registrations.584000064839003" onChange="processConditionalSection(this);" disabled="yes">
+                  <option value="Fall">Fall</option>
+                  <option value="Spring" selected="selected">Spring</option>
+                  <option value="Summer">Summer</option>
+                  <option value="Winter">Winter</option>
+                </select>
+                <script type="text/javascript">
+                  // <![CDATA[
+                  _IW.FormValidator.addSingleSelectValidator("Registrations.584000064839003", "Please select 1 item", { isReqFunc: true, disabled: true });
+                  // ]]>
+                </script>
+              </div>
+              <div class="request-info" id="hidden">
+                <label title="Lead Source" for="Contacts.584000000003013" class="top">Lead Source</label>
+                <select name="Contacts.584000000003013" id="Contacts.584000000003013" onChange="processConditionalSection(this);"><option value="" selected="selected"></option>
+                  <option value="Bowling Alley">Bowling Alley</option>
+                  <option value="Campus Visit">Campus Visit</option>
+                  <option value="Cinema">Cinema</option>
+                  <option value="Demand Engine">Demand Engine</option>
+                  <option value="Education Fair">Education Fair</option>
+                  <option value="Email">Email</option>
+                  <option value="Hometeam">Hometeam</option>
+                  <option value="PURL">PURL</option>
+                  <option value="Phone">Phone</option>
+                  <option value="Project Graduate Online">Project Graduate Online</option>
+                  <option value="Raise your Hand" selected="selected">Raise your Hand</option>
+                  <option value="Web Contact">Web Contact</option>
+                </select>
+                <script type="text/javascript">
+                  // <![CDATA[
+                  _IW.FormValidator.addSingleSelectValidator("Contacts.584000000003013", "Please select 1 item", { isReqFunc: true, disabled: true });
+                  // ]]>
+                </script>
+              </div>
+              <div class="request-info" id="hidden">
+                <label title="Prospect Source" for="Registrations.584000045928839" class="top">Prospect Source</label>
+                <select name="Registrations.584000045928839" id="Registrations.584000045928839" onChange="processConditionalSection(this);" disabled="yes"><option value=""></option>
+                  <option value="2016 ISIR List">2016 ISIR List</option>
+                  <option value="ACT List">ACT List</option>
+                  <option value="ACT Preferred Names">ACT Preferred Names</option>
+                  <option value="APSU Deny List">APSU Deny List</option>
+                  <option value="Adult Education lists">Adult Education lists</option>
+                  <option value="Adult Prospects">Adult Prospects</option>
+                  <option value="Area Technology Center lists">Area Technology Center lists</option>
+                  <option value="Ask Angie">Ask Angie</option>
+                  <option value="Business Fairs/Visits">Business Fairs/Visits</option>
+                  <option value="Campus Visit">Campus Visit</option>
+                  <option value="College Fairs">College Fairs</option>
+                  <option value="Dual Credit">Dual Credit</option>
+                  <option value="Dual-credit lists">Dual-credit lists</option>
+                  <option value="Fall 2016 pURL">Fall 2016 pURL</option>
+                  <option value="GED Graduates">GED Graduates</option>
+                  <option value="Gateway2NKU">Gateway2NKU</option>
+                  <option value="High School Visits">High School Visits</option>
+                  <option value="High school lists">High school lists</option>
+                  <option value="ISIR List">ISIR List</option>
+                  <option value="ITT Tech">ITT Tech</option>
+                  <option value="KCA Raise Your Hand">KCA Raise Your Hand</option>
+                  <option value="LOD Purl">LOD Purl</option>
+                  <option value="LOD Webform">LOD Webform</option>
+                  <option value="NRCCUA 2016">NRCCUA 2016</option>
+                  <option value="Online Marketing">Online Marketing</option>
+                  <option value="Raise Your Hand" selected="selected">Raise Your Hand</option>
+                  <option value="Referral">Referral</option>
+                  <option value="Student Aid Report">Student Aid Report</option>
+                  <option value="Super Sunday">Super Sunday</option>
+                  <option value="Unemployment lists">Unemployment lists</option>
+                  <option value="Web inquiry forms">Web inquiry forms</option>
+                  <option value="Workforce lists">Workforce lists</option>
+                  <option value="Always On SEM">Always On SEM</option>
+                </select>
+              </div>
+              <div class="form__row">
+                <label for="Registrations.584000100432160">
+                  <input type="checkbox" value="on" id="Registrations.584000100432160" name="Registrations.584000100432160"/>
+                  Interested in the Work Ready KY Scholarship?
+                </label>
+              </div>
+              <div class="request-info" id="hidden">
+                <label title="Home College - Picklist" for="Contacts.584000048448509" class="top">Home College - Picklist</label>
+                <select class="college" name="Contacts.584000048448509" id="Contacts.584000048448509" onChange="processConditionalSection(this);" disabled="yes"> 
+                  <option value="Ashland Community And Technical College">Ashland Community And Technical College</option>
+                  
+                  <option value="Big Sandy Community And Technical College">Big Sandy Community And Technical College</option>
+                  
+                  <option value="Bluegrass Community And Technical College">Bluegrass Community And Technical College</option>
+                  
+                  <option value="Elizabethtown Community And Technical College">Elizabethtown Community And Technical College</option>
+                  
+                  <option value="Gateway Community And Technical College">Gateway Community And Technical College</option>
+                  
+                  <option value="Hazard Community And Technical College">Hazard Community And Technical College</option>
+                  
+                  <option value="Henderson Community College">Henderson Community College</option>
+                  
+                  <option value="Hopkinsville Community College">Hopkinsville Community College</option>
+                  
+                  <option value="Jefferson Community And Technical College">Jefferson Community And Technical College</option>
+                  
+                  <option value="Madisonville Community College">Madisonville Community College</option>
+                  
+                  <option value="Maysville Community And Technical College">Maysville Community And Technical College</option>
+                  
+                  <option value="Owensboro Community And Technical College">Owensboro Community And Technical College</option>
+                  
+                  <option value="Somerset Community College">Somerset Community College</option>
+                  
+                  <option value="Southcentral Kentucky Community And Technical College" selected="selected">Southcentral Kentucky Community And Technical College</option>
+                  
+                  <option value="Southeast Kentucky Community And Technical College">Southeast Kentucky Community And Technical College</option>
+                  
+                  <option value="West Kentucky Community And Technical College">West Kentucky Community And Technical College</option>
+                  
+                  <option value="Learn On Demand">Learn On Demand</option>
+                </select>
+              </div>        
+            </div>
+          </div>
+          <button class="submit fg-button button button-animate" type="button" onclick="_IW.FormsRuntime.submit(this.form);"><span>Get Started!</span></button>
+          {% endblock %}
+          

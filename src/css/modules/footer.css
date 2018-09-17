@@ -1,0 +1,165 @@
+.footer {
+  border-top: 0.5rem solid var(--gray);
+  text-align: center;
+  overflow: hidden;
+
+  @nest
+  .hslider + &,
+  .vslider + &,
+  .slider + &,
+  .campus + &,
+  .overlay + &,
+  .block:not(.block--transparent) + & {
+    border-top: 0;
+  }
+}
+
+.footer__container {
+  @mixin container;
+}
+
+.footer__address {
+  @mixin h5;
+
+  margin: 3rem 0;
+}
+
+.footer__address__part {
+  display: block;
+
+  @media (--lg) {
+    display: inline;
+  }
+
+  &::after {
+    @media (--lg) {
+      content: '|';
+      margin: 0 0.5rem;
+    }
+  }
+
+  &:last-child {
+    &::after {
+      @media (--lg) {
+        display: none;
+      }
+    }
+  }
+}
+
+.footer__cta {
+  @mixin text-caption;
+
+  margin: 0 0 3rem 0;
+  padding: 0;
+  list-style: none;
+
+  @media (--lg) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.footer__cta__item {
+  margin-top: 1rem;
+
+  @media (--lg) {
+    margin: 0 0.5rem 1rem;
+  }
+
+  &:last-child {
+    @media (--lg) {
+      width: 100%;
+      margin: 0;
+    }
+  }
+}
+
+.footer__cta__link {
+  border: 0 solid transparent;
+
+  &:hover {
+    border-bottom: 0.25em solid;
+  }
+}
+
+.footer__nav {
+  @mixin text-caption;
+
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer__nav__item {
+  margin-top: 1rem;
+
+  @media (--lg) {
+    display: inline;
+    margin: 1rem 0.5rem 0;
+  }
+}
+
+.footer__nav__link {
+  border: 0 solid transparent;
+
+  &:hover {
+    border-bottom: 0.25em solid;
+  }
+}
+
+.footer__social {
+  display: inline-flex;
+  margin: 3rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer__social__item {
+  margin: 0 0.75rem;
+}
+
+.footer__social__link {
+  display: block;
+  width: 2rem;
+  border: 0;
+  transition: color var(--transition);
+
+  &:hover {
+    color: var(--gold);
+  }
+}
+
+.footer__bottom {
+  padding: 1rem 0;
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.footer__logo {
+  display: block;
+  max-width: 20rem;
+  margin: 0 auto;
+  border: 0;
+
+  @media (--md) {
+    max-width: 46rem;
+  }
+}
+
+.footer__logo__stacked {
+  display: block;
+
+  @media (--md) {
+    display: none;
+  }
+}
+
+.footer__logo__standard {
+  display: none;
+
+  @media (--md) {
+    display: block;
+  }
+}

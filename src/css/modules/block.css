@@ -1,0 +1,35 @@
+.block {
+  padding: 3rem 0 6rem;
+  background-color: var(--gray);
+}
+
+.block--blue {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.block--clip-br {
+  @mixin clip-br;
+}
+
+.block--clip-tl-br {
+  @mixin clip-tl-br;
+}
+
+.block--transparent {
+  margin: 6rem 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+.block--tight {
+  padding: 3rem 0;
+}
+
+.block__container {
+  @mixin container;
+}
+
+.block__container--narrow {
+  max-width: 60rem;
+}

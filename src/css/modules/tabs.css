@@ -1,0 +1,161 @@
+.tabs {
+  border-bottom: 0.125rem solid var(--gold);
+
+  @media (--lg) {
+    border: 0;
+  }
+}
+
+.tabs--alt {
+  border-bottom: 0;
+}
+
+.tabs__nav {
+  display: none;
+  align-items: flex-end;
+  width: 100%;
+  border-bottom: 0.125rem solid var(--gold);
+
+  @media (--lg) {
+    display: flex;
+  }
+}
+
+.tabs__nav--alt {
+  display: flex;
+}
+
+.tabs__button {
+  @mixin h6;
+
+  flex-grow: 1;
+  padding: 2rem 0;
+  border: 0;
+  border-bottom: 0.375rem solid transparent;
+  transition: border-bottom var(--transition);
+  background-color: transparent;
+  text-align: center;
+}
+
+.tabs__button--left {
+  flex-grow: 1;
+  margin-top: 0;
+  padding-right: 0;
+  padding-left: 0;
+
+  @media (--sm) {
+    flex-grow: 0;
+    padding-right: 4rem;
+    padding-left: 4rem;
+  }
+
+  @media (--lg) {
+    margin-top: 2em;
+  }
+}
+
+.tabs__button--last-active {
+  border-bottom-color: var(--gold);
+}
+
+.tabs__content {
+  @media (--lg) {
+    margin-top: 2rem;
+  }
+}
+
+.tabs__item {
+  display: none;
+  margin-bottom: 2rem;
+
+  & .card {
+    animation: fade-in-up var(--transition);
+    animation-fill-mode: both;
+
+    &:nth-child(2) {
+      animation-delay: 100ms;
+    }
+
+    &:nth-child(3) {
+      animation-delay: 200ms;
+    }
+
+    &:nth-child(4) {
+      animation-delay: 300ms;
+    }
+
+    &:nth-child(5) {
+      animation-delay: 400ms;
+    }
+
+    &:nth-child(6) {
+      animation-delay: 500ms;
+    }
+
+    &:nth-child(7) {
+      animation-delay: 600ms;
+    }
+
+    &:nth-child(8) {
+      animation-delay: 700ms;
+    }
+
+    &:nth-child(9) {
+      animation-delay: 800ms;
+    }
+
+    &:nth-child(10) {
+      animation-delay: 900ms;
+    }
+
+    &:nth-child(11) {
+      animation-delay: 1000ms;
+    }
+
+    &:nth-child(12) {
+      animation-delay: 1100ms;
+    }
+
+    &:nth-child(13) {
+      animation-delay: 1200ms;
+    }
+
+    &:nth-child(14) {
+      animation-delay: 1300ms;
+    }
+
+    &:nth-child(15) {
+      animation-delay: 1400ms;
+    }
+
+    &:nth-child(16) {
+      animation-delay: 1500ms;
+    }
+
+    &:nth-child(17) {
+      animation-delay: 1600ms;
+    }
+
+    &:nth-child(18) {
+      animation-delay: 1700ms;
+    }
+  }
+}
+
+.tabs__item--active {
+  display: block;
+
+  @media (--lg) {
+    display: none;
+  }
+}
+
+.tabs__item--last-active {
+  @media (--lg) {
+    display: block;
+  }
+
+  @nest .tabs__content--alt & {
+    display: block;
+  }
+}

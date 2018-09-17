@@ -1,0 +1,32 @@
+.next-section {
+  @mixin container;
+
+  max-width: 64rem;
+}
+
+.next-section__heading {
+  text-align: center;
+}
+
+.next-section__arrow {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  margin: 2rem auto;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+
+  @media (--md) {
+    bottom: 3rem;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    background-image: svg-load('icon-caret.svg', fill: var(--blue));
+    background-size: 2rem 2rem;
+  }
+}

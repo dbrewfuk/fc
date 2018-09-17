@@ -1,0 +1,10 @@
+{% set vslider = [0, 1, 2, 3] %}
+
+<div class="vslider">
+  <div class="vslider__nav"></div>
+  <div class="vslider__items">
+    {% for item in vslider %}
+      {% include "modules/testimonial.html" %}
+    {% endfor %}
+  </div>
+</div>

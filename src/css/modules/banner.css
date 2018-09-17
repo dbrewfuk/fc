@@ -1,0 +1,116 @@
+.banner {
+  position: relative;
+  margin: 6rem 0;
+  background-color: var(--gray);
+  overflow: hidden;
+  z-index: 0;
+
+  @media (--lg) {
+    background-color: transparent;
+  }
+
+  &::after {
+    @media (--lg) {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom,rgba(0,0,0,.7),transparent 16rem);
+    }
+  }
+}
+
+.banner__container {
+  @mixin container;
+
+  position: relative;
+  padding: 0;
+
+  &::before {
+    @media (--lg) {
+      content: '';
+      display: block;
+      padding-bottom: 45%;
+    }
+  }
+}
+
+.banner__image {
+  position: relative;
+
+  @media (--lg) {
+    position: static;
+  }
+
+  & img {
+    @media (--lg) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100vw;
+      max-width: none;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,rgba(0,0,0,.7),transparent 16rem);
+
+    @media (--lg) {
+      display: none;
+    }
+  }
+}
+
+.banner__title {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  max-width: 16rem;
+  margin: 0;
+  color: var(--white);
+  z-index: 1;
+
+  @media (--md) {
+    max-width: 21rem;
+  }
+
+  @media (--lg) {
+    top: 3rem;
+    left: 3rem;
+  }
+}
+
+.banner__card {
+  @mixin clip-tl;
+
+  position: relative;
+  margin: -2rem 0 2rem 2rem;
+  padding: 1.5rem;
+  background-color: var(--white);
+  z-index: 1;
+
+  @media (--md) {
+    padding: 2.5rem 3rem;
+  }
+
+  @media (--lg) {
+    position: absolute;
+    right: 3rem;
+    bottom: 3rem;
+    max-width: 36rem;
+    margin: 0;
+  }
+}
+
+.banner__type {
+  @mixin text-caption;
+}

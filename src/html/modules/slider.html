@@ -1,0 +1,9 @@
+<div class="slider pull-up">
+  <h2 class="text-center heading--tight">News &amp; Events</h2>
+  <div class="slider__items">
+    {% for i in [0, 1, 2, 3] %}
+      {% include "modules/card-event.html" %}
+      {% include "modules/card-white.html" %}
+    {% endfor %}
+  </div>
+</div>

@@ -1,0 +1,55 @@
+{% set page = { title: 'Program' } %}
+
+{% extends "templates/default.html" %}
+
+{% block body %}
+
+{% include "modules/page-title.html" %}
+
+{% include "modules/breadcrumbs.html" %}
+
+{% include "modules/split.html" %}
+
+{% include "modules/split-video.html" %}
+
+<main class="main" id="main-content">
+
+  <div class="main__content">
+    <h2>Praesentium dolorem voluptatem rem iste!</h2>
+    <p class="text-intro">Quasi dicta temporibus velit numquam, voluptatibus, beatae neque. At minima dolorum officia quaerat dicta quisquam aspernatur quasi, ex. Veniam ad, totam laborum natus vitae eaque, nemo ipsum voluptas velit, nesciunt, quae harum libero ratione repudiandae cupiditate!</p>
+    <h3>Laboriosam dolorum obcaecati ad in quae nostrum vitae.</h3>
+    <p>Obcaecati quis officiis voluptatum molestiae ipsum voluptas neque temporibus facilis enim voluptatem mollitia quasi, officia harum molestias, dolor accusamus ducimus tempora similique nobis qui ut eos id. Quisquam saepe, soluta fugiat eveniet. Porro labore officia pariatur!</p>
+    <h3>Culpa, corporis doloremque?</h3>
+    <p>Laborum voluptates nulla eaque, aperiam ducimus accusantium cumque blanditiis labore quidem distinctio excepturi cum, doloribus sed, animi officia temporibus beatae vero. Vero rem, libero quis! Labore dolores aperiam architecto officiis, libero quam eos vitae ab, reprehenderit!</p>
+    <h3>Dolores, aliquid, nulla?</h3>
+    <p>Eius distinctio expedita laborum, praesentium optio ullam odio officia vel cum error! Deleniti eius at adipisci error dolor voluptatum porro repellendus debitis, obcaecati eos culpa, quo delectus explicabo maiores. Dolores architecto necessitatibus soluta, ullam, consequuntur voluptatem.</p>
+    <h3>Molestiae commodi dolor eum.</h3>
+    {% include "modules/chart.html" %}
+    <p>Placeat sed non facilis nostrum culpa fugiat, numquam sunt vero neque assumenda exercitationem amet tempore reprehenderit aliquid praesentium dolore doloremque, architecto ipsam enim. Incidunt, reprehenderit, similique. Quos, vel. Magni quam sit, quidem eum velit, officiis doloribus!</p>
+    <p class="text-caption">*Source: Glassdoor</p>
+    <h3>Fugiat ratione, fugit accusantium.</h3>
+    {% include "modules/table-simple.html" %}
+    <p class="text-caption">*Source: Nostrum optio, aperiam aliquam vitae eaque ab commodi explicabo at harum omnis.</p>
+    <h3>Corporis, atque.</h3>
+    {% include "modules/table-no-thead.html" %}
+    <h3>Dolores, officiis, dolorem.</h3>
+    {% include "modules/table-no-thead.html" %}
+    {% include "modules/accordion-single.html" %}
+  </div>
+
+  <div class="main__sidebar">
+    <a href="#" class="button button--sidebar">Ullam, corporis?</a>
+    <h3>Unde, delectus.</h3>
+    <div class="text-widget">
+      <p>Wendy Noble<br>Business Administration<br>Program Coordinator<br>6.6.759.7141 ext. 66160<br><a href="#">wendy.noble@kctcs.edu</a></p>
+    </div>
+    <h3>Related Links</h3>
+    {% include "modules/link-list.html" %}
+    {% include "modules/card.html" %}
+  </div>
+
+</main>
+
+{% include "modules/hslider.html" %}
+
+{% endblock %}

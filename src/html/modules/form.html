@@ -1,0 +1,77 @@
+    <script src="//webdevassets.kctcs.edu/_resources/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+    <script src="//webdevassets.kctcs.edu/_resources/js/calendarDateInput.js" type="text/javascript"></script>
+    
+    <form class="form">
+      <div class="form__row">
+        <label class="form__label" for="form-text">Text</label>
+        <input type="text" class="form__input" id="form-text">
+      </div>
+      <div class="form__row">
+        <label class="form__label" for="form-select">Select</label>
+        <select class="form__select" id="form-select">
+          {% for i in range(0, 6) %}
+          <option>Option {{ i }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="form__row" role="radiogroup" aria-label="Radio Group">
+        <div class="form__label">Radio</div>
+        {% for i in range(0, 6) %}
+        <label class="form__radio"><input type="radio" name="radio">Option {{ i }}</label>
+        {% endfor %}
+      </div>
+      <div class="form__row" role="group" aria-label="Checkbox Group">
+        <div class="form__label">Checkbox</div>
+        {% for i in range(0, 6) %}
+        <label class="form__checkbox"><input type="checkbox">Option {{ i }}</label>
+        {% endfor %}
+      </div>
+      <button class="button" type="submit">Submit</button>
+    </form>
+    
+    <form class="form">
+      <div class="h5">Filter articles</div>
+      
+      <div class="split__container">
+        <div class="split__media form__row">
+          <div class="form__float">
+            <label for="fromDate_Month_ID" class="form__label heading--tight">From</label>
+            <script type="text/javascript">
+              var firstdate = new Date();
+              firstdate.setMonth(firstdate.getMonth() - 3);
+              DateInput('fromDate', true, 'DD-MON-YYYY', firstdate.getDate().toString() + '-' + firstdate.toLocaleString("en-US", { month: "short" }) + '-' + firstdate.getFullYear().toString() );	
+            </script>
+            <!--<input type='hidden' name='fromDate' value=''/>-->
+          </div>
+          <div>
+            <label id="toDate_Month_ID" class="form__label heading--tight">To</label>
+            <script type="text/javascript">
+              var today = new Date();
+              DateInput('toDate', true, 'DD-MON-YYYY', today.getDate().toString() + '-' + today.toLocaleString("en-US", { month: "short" }) + '-' + today.getFullYear().toString() );	
+            </script>
+            <!--<input type='hidden' name='toDate' value=''/>-->
+          </div>
+        </div>
+        <div class="split__media form__row">
+          <label for="phpagecontent_0_phmaincontent_2_searchBox" class="form__label">Search</label>
+          <input name="phpagecontent_0$phmaincontent_2$searchBox" type="text" id="phpagecontent_0_phmaincontent_2_searchBox" class="form__input"/>
+          <button class="button button--small" name="phpagecontent_0$phmaincontent_2$btnGo" id="ou_go">Go</button>
+  
+        </div>
+      </div>
+      <div>            
+        <select name="phpagecontent_0$phmaincontent_2$dlCategories" id="phpagecontent_0_phmaincontent_2_dlCategories" class="”category”">
+          <option selected="selected" value="-1">All Categories</option>
+          <xsl:for-each select="$tags/dd/tags/tag">
+          <xsl:if test="disabled = 'false'">
+          <option value="{name}">
+            <xsl:value-of select="name"/>
+          </option>
+        </xsl:if>
+      </xsl:for-each>
+    </select>
+  </div>
+  
+  <input type="hidden" name="phpagecontent_0$phmaincontent_2$hdnFromDate" id="phpagecontent_0_phmaincontent_2_hdnFromDate"/>
+  <input type="hidden" name="phpagecontent_0$phmaincontent_2$hdnToDate" id="phpagecontent_0_phmaincontent_2_hdnToDate"/>
+</form>

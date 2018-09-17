@@ -1,0 +1,24 @@
+{% set accordion = [0, 1, 2, 3] %}
+
+<div class="accordion">
+  {% for i in accordion %}
+    <button class="accordion__toggle">Accordion Toggle</button>
+    <div class="accordion__content">
+      <p>Aperiam enim in facere suscipit, accusantium distinctio. Commodi harum alias, perferendis omnis quas autem explicabo animi a. Labore, illum, quia. Ea itaque, quo! Omnis?</p>
+      <h5>Praesentium, eum.</h5>
+      <p>Facilis minima minus suscipit, nihil in error perferendis id culpa iusto, pariatur aspernatur architecto totam provident labore voluptate ab incidunt optio eveniet soluta ipsa!</p>
+      <h5>Placeat, ea.</h5>
+      <ul>
+        <li>Dolorum, laboriosam.</li>
+        <li>Earum, minima.</li>
+        <li>Culpa, dolorem.</li>
+      </ul>
+      <h5>Blanditiis, inventore.</h5>
+      <ol>
+        <li>Ad, perferendis.</li>
+        <li>Aperiam, magni.</li>
+        <li>Fuga, eligendi.</li>
+      </ol>
+    </div>
+  {% endfor %}
+</div>

@@ -1,0 +1,21 @@
+{% set tabs = [0, 1, 2, 3, 4] %}
+
+<div class="tabs">
+  <div class="tabs__nav">
+    {% for i in tabs %}
+      <button class="tabs__button">Tab {{ i }}</button>
+    {% endfor %}
+  </div>
+  <div class="tabs__content">
+    {% for i in tabs %}
+      <button class="accordion__toggle accordion__toggle--tabs">Accordion Toggle</button>
+      <div class="tabs__item">
+        <div class="grid">
+          {% for j in [0, 1, 2, 3, 4, 5, 6, 7, 8] %}
+            {% include "modules/card-simple.html" %}
+          {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>

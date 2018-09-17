@@ -1,0 +1,60 @@
+/* breakpoints */
+@custom-media --sm (min-width: 32em);
+@custom-media --md (min-width: 48em);
+@custom-media --lg (min-width: 64em);
+@custom-media --xl (min-width: 80em);
+
+:root {
+  /* fonts */
+  --sans-serif: 'Work Sans', sans-serif;
+
+  /* colors */
+  --blue: #00477f;
+  --blue-dark: #013057;
+  --blue-overlay: color(var(--blue) alpha(95%));
+  --gold: #dea128;
+  --white: #fff;
+  --gray: #f2f2f2;
+  --gray-darker: #ccc;
+  --black: #000;
+  --shadow: color(var(--black) alpha(50%));
+
+  /* transitions */
+  --transition-duration: 300ms;
+  --transition-easing: ease;
+  --transition: var(--transition-duration) var(--transition-easing);
+  --transition-double: calc(var(--transition-duration) * 2) var(--transition-easing);
+  --transition-half: calc(var(--transition-duration) / 2) var(--transition-easing);
+
+  /* misc */
+  --box-shadow: 0.125rem 0.125rem 0.5rem var(--shadow);
+}
+
+/* animation */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-up {
+  0% {
+    transform: translateY(4rem);
+    opacity: 0;
+  }
+
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes animation-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}

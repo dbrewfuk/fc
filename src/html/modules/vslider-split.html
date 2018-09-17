@@ -1,0 +1,10 @@
+{% set vslider = [0, 1, 2, 3] %}
+
+<div class="vslider vslider--margins">
+  <div class="vslider__nav vslider__nav--blue"></div>
+  <div class="vslider__items">
+    {% for item in vslider %}
+      {% include "modules/split-simple.html" %}
+    {% endfor %}
+  </div>
+</div>

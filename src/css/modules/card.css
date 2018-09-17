@@ -1,0 +1,209 @@
+.card {
+  display: block;
+  max-width: 48rem;
+  margin: 6rem auto;
+  border: 0;
+}
+
+.card--inactive {
+  display: none;
+}
+
+.card--animate:not(.card--show) {
+  opacity: 0;
+  animation-fill-mode: both;
+}
+
+.card--show {
+  animation: fade-in-up var(--transition);
+}
+
+.card--outline {
+  position: relative;
+  transition: box-shadow var(--transition);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    box-shadow: 0 0 0 0.5rem var(--gold), 0.125rem 0.125rem 0.5rem 0.5rem var(--shadow);
+  }
+
+  &:hover {
+    z-index: 1;
+
+    &::before {
+      transition: opacity var(--transition);
+      opacity: 1;
+    }
+  }
+}
+
+.card__image {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+
+  & img {
+    transition: transform var(--transition);
+
+    @nest .card:hover & {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.card__image--overlay {
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--shadow);
+  }
+}
+
+.card__image__overlay {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  max-width: 80%;
+  margin: 0;
+  transform: translateY(-50%);
+  color: var(--white);
+  z-index: 1;
+}
+
+.card__date {
+  position: relative;
+  background-color: var(--gray);
+  color: var(--blue);
+  font-weight: 700;
+  line-height: 1;
+
+  &::before {
+    content: '';
+    display: block;
+    padding-bottom: 66.667%;
+  }
+}
+
+.card__date__month,
+.card__date__day {
+  position: absolute;
+  left: 1.5rem;
+}
+
+.card__date__month {
+  bottom: 6.5rem;
+  font-size: 2.5rem;
+}
+
+.card__date__day {
+  bottom: 1.5rem;
+  font-size: 5rem;
+}
+
+.card__icon {
+  width: 3rem;
+  margin-bottom: 1rem;
+}
+
+.card__content {
+  padding: 2rem 1.5rem;
+  background-color: var(--white);
+  color: var(--blue);
+}
+
+.card__content--blue {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.card__content--alt {
+  position: relative;
+  padding: 1.5rem 1rem;
+  border: 0.5rem solid transparent;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -0.5rem;
+    right: -0.5rem;
+    bottom: -0.5rem;
+    left: -0.5rem;
+    border: 0.5rem solid var(--gold);
+    transition: opacity var(--transition);
+    box-shadow: var(--box-shadow);
+    opacity: 0;
+  }
+
+  @nest .card:hover & {
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+.card__type {
+  @mixin text-caption;
+
+  margin-top: 0;
+}
+
+.card__title {
+  display: inline;
+  border-bottom: 0 solid transparent;
+  transition: border-bottom var(--transition);
+
+  @nest .card:hover & {
+    border-bottom: 0.125em solid currentColor;
+  }
+}
+
+.card__more {
+  @mixin text-list-cta;
+
+  display: flex;
+  align-items: center;
+
+  &::after {
+    content: '';
+    display: block;
+    flex-shrink: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-left: 1.5rem;
+    transition: opacity var(--transition);
+    background-image: svg-load('icon-arrow-right.svg', fill: var(--blue));
+    background-position: center;
+    background-size: 2.5rem 2.5rem;
+    opacity: 0;
+  }
+
+  @nest .card:hover & {
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
+.card__more--white {
+  &::after {
+    background-image: svg-load('icon-arrow-right.svg', fill: var(--white));
+  }
+}
+
+.card__more--empty {
+  margin-bottom: -1rem;
+
+  &::after {
+    margin-left: 0;
+  }
+}

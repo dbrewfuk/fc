@@ -1,0 +1,15 @@
+<div class="alert alert--overlay" role="alert" aria-labelledby="alert2">
+  <div class="alert__container">
+    {{ svg('icon-warning', 'alert__icon') }}
+    <div class="alert__text">
+      <h2 id="alert2" class="alert__title">Minima harum impedit magni?</h2>
+      <p class="text-intro">Ducimus nesciunt quod praesentium, molestiae, consectetur fugit. Sapiente, ipsa aperiam praesentium cumque illo similique quod, totam molestias natus magni culpa, quis eveniet ut officiis.</p>
+      {% for i in range(0, 3) %}
+        <p class="alert__meta">Monday December 8, 2017 | 12:37 PM</p>
+        <h3>Necessitatibus, doloremque.</h3>
+        <p>Excepturi autem cumque vero laudantium unde itaque voluptatibus quis cupiditate quam maiores nulla natus eos totam repudiandae, assumenda recusandae commodi omnis ea ipsum fugit.</p>
+      {% endfor %}
+    </div>
+    <button class="alert__close"><span class="hide">Close</span></button>
+  </div>
+</div>

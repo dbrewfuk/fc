@@ -1,0 +1,47 @@
+.breadcrumbs {
+  @mixin container;
+  @mixin text-caption;
+
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+
+  @media (--md) {
+    flex-direction: row;
+  }
+}
+
+.breadcrumbs__link {
+  border-bottom: 0 solid transparent;
+
+  &:hover {
+    border-bottom: 0.25em solid;
+  }
+}
+
+.breadcrumbs__separator {
+  margin: 0 0.5rem;
+}
+
+.breadcrumbs__current {
+  font-weight: 700;
+}
+
+.breadcrumbs__group {
+  width: 100%;
+  margin-right: 0.5rem;
+}
+
+.breadcrumbs__share {
+  flex-shrink: 0;
+  align-self: flex-end;
+  margin-top: 1rem;
+  transform: translateX(0.625rem);
+
+  @media (--md) {
+    align-self: flex-start;
+    margin: 0;
+  }
+}

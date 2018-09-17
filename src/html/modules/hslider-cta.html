@@ -1,0 +1,12 @@
+{% set hslider = [0, 1, 2, 3] %}
+
+<div class="hslider hslider--bg">
+  <div class="hslider__items">
+    {% for item in hslider %}
+      {% include "modules/testimonial.html" %}
+    {% endfor %}
+  </div>
+  <p class="hslider__cta text-center">
+    <a href="#" class="button button--white">More testimonials</a>
+  </p>
+</div>

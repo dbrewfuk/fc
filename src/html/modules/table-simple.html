@@ -1,0 +1,22 @@
+{% set table = [0, 1, 2, 3] %}
+
+<div class="table">
+  <div class="table__scroll">
+    <table>
+      <thead>
+        <tr>
+          <th>Aliquam, odit.</th>
+          <th>Explicabo, sequi.*</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in table %}
+          <tr>
+            <td><span class="table__bold">Quisquam, delectus possimus.</span></td>
+            <td><span class="table__bold">$123,456</span></td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>

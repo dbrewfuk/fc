@@ -1,0 +1,106 @@
+<link href="https://api.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.css" rel="stylesheet" />
+<script src="https://api.mapbox.com/mapbox-gl-js/v0.42.0/mapbox-gl.js"></script>
+<script>
+  var mapFeatures = [
+    {
+      type: 'Feature',
+      properties: {
+        title: 'Maysville',
+        description: 'my desc',
+        schedule: '#mys',
+        directions: '#myd',
+        image: '//placehold.it/1024x683/1',
+      },
+      geometry: {
+        type: 'Point',
+        coordinates: [-83.805225, 38.626665],
+      },
+    },
+    {
+      type: 'Feature',
+      properties: {
+        title: 'Licking Valley',
+        description: 'lv desc',
+        schedule: '#lvs',
+        directions: '#lvd',
+        image: '//placehold.it/1024x683/2',
+      },
+      geometry: {
+        type: 'Point',
+        coordinates: [-84.294113, 38.381688],
+      },
+    },
+    {
+      type: 'Feature',
+      properties: {
+        title: 'Montgomery',
+        description: 'mt desc',
+        schedule: '#mts',
+        directions: '#mtd',
+        image: '//placehold.it/1024x683/3',
+      },
+      geometry: {
+        type: 'Point',
+        coordinates: [-84.727871, 38.058713],
+      },
+    },
+    {
+      type: 'Feature',
+      properties: {
+        title: 'Rowan',
+        description: 'rw desc',
+        schedule: '#rws',
+        directions: '#rwd',
+        image: '//placehold.it/1024x683/4',
+      },
+      geometry: {
+        type: 'Point',
+        coordinates: [-84.947171, 38.655342],
+      },
+    },
+  ];
+</script>
+
+<div class="campus">
+  <div class="campus__container">
+    <div class="campus__left">
+      <div class="campus__image">
+        <div class="campus__image__wrap">
+          <img src="//placehold.it/1024x683" alt="placeholder">
+        </div>
+        <h2 class="campus__image__overlay">Visit campus</h2>
+      </div>
+      <div class="campus__nav">
+        <button class="campus__nav__toggle">Campus Locations</button>
+        <div class="campus__nav__list">
+          <ul class="cta-list">
+            <li class="cta-list__item cta-list__item--stack">
+              <button class="cta-list__link cta-list__link--white cta-list__link--map">Maysville Campus</button>
+            </li>
+            <li class="cta-list__item cta-list__item--stack">
+              <button class="cta-list__link cta-list__link--white cta-list__link--map">Licking Valley Campus</button>
+            </li>
+            <li class="cta-list__item cta-list__item--stack">
+              <button class="cta-list__link cta-list__link--white cta-list__link--map">Montgomery Campus</button>
+            </li>
+            <li class="cta-list__item cta-list__item--stack">
+              <button class="cta-list__link cta-list__link--white cta-list__link--map">Rowan Campus</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="campus__right">
+      <button class="campus__all">View all</button>
+      <div class="campus__map-container">
+        <div class="campus__map" id="campus-map-0"></div>
+      </div>
+      <div class="campus__detail">
+        <div class="campus__detail__card">
+          <h3 class="campus__detail__title">Aperiam, inventore?</h3>
+          <p>Molestiae, at eum iusto iure unde, enim nemo minima, id quasi voluptate doloremque temporibus ipsum. Consequuntur veniam accusantium quisquam tenetur quibusdam asperiores id doloremque totam repudiandae qui modi voluptates provident, velit eum earum libero quis quasi!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

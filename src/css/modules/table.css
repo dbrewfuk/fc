@@ -1,0 +1,127 @@
+.table {
+  position: relative;
+  margin: 2rem 0;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0.5rem;
+    height: 100%;
+    background-image: linear-gradient(to left, var(--shadow), transparent);
+    pointer-events: none;
+
+    @media (--lg) {
+      display: none;
+    }
+  }
+
+  & table {
+    width: 100%;
+    border-collapse: collapse;
+    border-bottom: 0.125rem solid var(--gold);
+  }
+
+  & th,
+  & td {
+    vertical-align: top;
+  }
+
+  & th {
+    @mixin h4;
+
+    padding: 2rem 1.25rem;
+    background-color: var(--blue);
+    color: var(--white);
+    text-align: left;
+
+    &:first-child {
+      padding-left: 1.25rem;
+    }
+  }
+
+  & td {
+    padding: 1.25rem 1.25rem;
+    border-top: 0.125rem solid var(--gold);
+  }
+}
+
+.table__scroll {
+  overflow: auto;
+
+  & table {
+    min-width: 64rem;
+
+    @media (--lg) {
+      min-width: 0;
+    }
+  }
+}
+
+.table__toggle {
+  display: block;
+  position: relative;
+  width: 1.125rem;
+  height: 1.125rem;
+  margin-top: 0.3125rem;
+  margin-left: 0.25rem;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 1.125rem;
+    height: 1.125rem;
+    transform: translateY(-50%);
+    background-image: svg-load('icon-plus.svg', fill: var(--blue));
+    background-position: center;
+    background-size: 1.125rem 1.125rem;
+  }
+}
+
+.table__toggle--active {
+  &::before {
+    background-image: svg-load('icon-minus.svg', fill: var(--blue));
+  }
+}
+
+.table__collapse {
+  display: none;
+  background-color: var(--gray);
+
+  & td {
+    border: 0;
+  }
+}
+
+.table__collapse--active {
+  display: table-row;
+}
+
+.table__bold {
+  @mixin text-list-cta;
+
+  display: inline-block;
+}
+
+.table__left {
+  padding-left: 0 !important;
+
+  & a {
+    white-space: nowrap;
+  }
+}
+
+.table__right {
+  padding-right: 0 !important;
+  text-align: right;
+
+  & a {
+    white-space: nowrap;
+  }
+}

@@ -1,0 +1,39 @@
+.cta {
+  margin: 2rem 0;
+
+  @media (--sm) {
+    margin-top: calc(13% + 2rem);
+  }
+}
+
+.cta__image {
+  position: relative;
+  margin-bottom: 2rem;
+  float: right;
+  z-index: 1;
+
+  @media (--sm) {
+    max-width: 45%;
+    margin: -13% 3rem 2rem 2rem;
+  }
+}
+
+.cta__container {
+  @mixin clip-tl-br;
+
+  padding: 1rem 1.5rem;
+  background-color: var(--blue);
+  color: var(--white);
+
+  @media (--md) {
+    padding: 2rem 3rem;
+  }
+}
+
+.cta__type {
+  @mixin text-caption;
+}
+
+.cta__title {
+  margin: 1em 0;
+}

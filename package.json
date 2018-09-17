@@ -1,0 +1,75 @@
+{
+  "name": "build",
+  "version": "0.1.0",
+  "scripts": {
+    "webpack": "webpack",
+    "svgo": "svgo \"img\" --disable removeViewBox --enable removeDimensions",
+    "stylelint": "stylelint \"src/css/**/*.css\"",
+    "eslint": "eslint \"src/js/**/*.js\"",
+    "lint": "run-s stylelint eslint",
+    "deploy": "npm run webpack"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "Firefox ESR"
+  ],
+  "stylelint": {
+    "extends": "stylelint-config-standard",
+    "rules": {
+      "at-rule-no-unknown": [
+        true,
+        {
+          "ignoreAtRules": [
+            "define-mixin",
+            "mixin"
+          ]
+        }
+      ]
+    }
+  },
+  "eslintConfig": {
+    "extends": "eslint-config-airbnb-base",
+    "env": {
+      "browser": true
+    }
+  },
+  "dependencies": {
+    "debug": "^3.1.0",
+    "flickity": "^2.0.10",
+    "flickity-imagesloaded": "^2.0.0",
+    "jquery": "^3.3.1",
+    "normalize.css": "^7.0.0",
+    "smoothscroll-polyfill": "^0.4.0",
+    "what-input": "^5.0.4",
+    "xml-js": "^1.6.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.35",
+    "@babel/preset-env": "^7.0.0-beta.35",
+    "babel-loader": "^8.0.0-beta.0",
+    "browser-sync": "^2.23.5",
+    "browser-sync-webpack-plugin": "^1.2.0",
+    "clean-webpack-plugin": "^0.1.17",
+    "css-loader": "^0.28.8",
+    "eslint": "^4.15.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "extract-loader": "^1.0.2",
+    "file-loader": "^1.1.6",
+    "html-loader": "^0.5.4",
+    "npm-run-all": "^4.1.2",
+    "nunjucks-html-loader": "^1.1.0",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-import": "^11.0.0",
+    "postcss-inline-svg": "^3.0.0",
+    "postcss-loader": "^2.0.10",
+    "postcss-mixins": "^6.2.0",
+    "stylelint": "^8.4.0",
+    "stylelint-config-standard": "^18.0.0",
+    "svgo": "^1.0.3",
+    "webpack": "^3.10.0",
+    "webpack-notifier": "^1.5.0",
+    "webpack-s3-plugin": "^1.0.0-rc.0"
+  }
+}

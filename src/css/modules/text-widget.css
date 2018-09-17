@@ -1,0 +1,8 @@
+.text-widget {
+  @mixin text-large;
+
+  margin-bottom: 4rem;
+  padding-top: 1rem;
+  border-top: 0.5rem solid var(--gold);
+  font-weight: 700;
+}

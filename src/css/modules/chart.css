@@ -1,0 +1,53 @@
+.chart {
+  @mixin h6;
+
+  margin: 2rem 0;
+  padding: 1rem 0;
+  border-top: 0.125rem solid var(--gold);
+  border-bottom: 0.125rem solid var(--gold);
+
+  @media (--lg) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.chart__left {
+  @media (--lg) {
+    flex-shrink: 0;
+    margin-right: 3rem;
+  }
+}
+
+.chart__right {
+  @media (--lg) {
+    width: 100%;
+  }
+}
+
+.chart__value {
+  display: block;
+  margin: 1rem 0;
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+.chart__data {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  height: 6rem;
+  margin: 0.5rem 0;
+}
+
+.chart__bar {
+  flex-grow: 1;
+  margin: 0 0.25rem;
+  background-color: var(--gold);
+}
+
+.chart__caption {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}

@@ -1,0 +1,31 @@
+{% set table = [0, 1, 2] %}
+
+<div class="table">
+  <div class="table__scroll">
+    <table>
+      <thead>
+        <tr>
+          <th colspan="2">Non, quae!</th>
+          <th>Aliquam, odit.</th>
+          <th colspan="2">Explicabo, sequi.</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in table %}
+          <tr>
+            <td class="table__left table__right"><button class="table__toggle" title="Toggle Table"></button></td>
+            <td><a class="icon-link icon-link--pdf" href="#">KCT-01089</a></td>
+            <td><span class="table__bold">Repellat perspiciatis, nostrum architecto!</span></td>
+            <td><span class="table__bold">11/27/2017</span></td>
+            <td class="table__right"><a href="#">More info</a></td>
+          </tr>
+          <tr class="table__collapse">
+            <td>&nbsp;</td>
+            <td><a class="icon-link icon-link--pdf" href="#">Addendum 1</a></td>
+            <td colspan="3"><span class="table__bold">Cupiditate, sunt, non.</span></td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>

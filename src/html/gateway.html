@@ -1,0 +1,33 @@
+{% set page = { title: 'Gateway' } %}
+
+{% extends "templates/default.html" %}
+
+{% block body %}
+<main id="main-content">
+  {% include "modules/page-title.html" %}
+  
+  {% include "modules/breadcrumbs.html" %}
+  
+  {% include "modules/next.html" %}
+  
+  <div class="block" id="block-tabs">
+    <div class="block__container">
+      <h3 class="text-center">Nemo, qui enim atque.</h3>
+      <div class="grid">
+        {% for i in [0, 1, 2] %}
+        {% include "modules/card-large.html" %}
+        {% endfor %}
+      </div>
+      <h3 class="text-center">Quasi eum, deleniti.</h3>
+      {% include "modules/tabs.html" %}
+    </div>
+  </div>
+  
+  <div class="block block--blue block--clip-tl-br block--tight pull-up">
+    <h2 class="text-center heading--flush">At Maysville</h2>
+    <div class="block__container">
+      {% include "modules/tabs-alt.html" %}
+    </div>
+  </div>
+</main>
+{% endblock %}

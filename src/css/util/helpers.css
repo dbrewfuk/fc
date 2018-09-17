@@ -1,0 +1,44 @@
+.hide {
+  @mixin hide;
+}
+
+.pull-up {
+  margin-top: -2rem;
+
+  @media (--md) {
+    margin-top: -3rem;
+  }
+}
+
+.margin-top {
+  margin-top: 2.5rem !important;
+}
+
+.margin-bottom {
+  margin-bottom: 2.5rem !important;
+}
+
+.skip a {
+  position: absolute;
+  left: -10000rem;
+  top: -2rem;
+  width: .1rem;
+  height: .1rem;
+  overflow: hidden;
+  z-index: 100;
+  color: var(--white);
+  outline: 0;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-bottom-right-radius: .3rem;
+  transition: top 1s ease-out;
+  font-family: $sans-serif;
+  &:focus {
+    left: 0;
+    top: 0;
+    width: auto;
+    height: auto;
+    background: var(--black);
+    transition: top .1s ease-in;
+  }
+}

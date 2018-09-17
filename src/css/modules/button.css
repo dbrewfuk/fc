@@ -1,0 +1,106 @@
+.button {
+  display: inline-block;
+  width: 18.75rem;
+  max-width: 100%;
+  padding: 0.78125rem 2rem;
+  border: 0.125rem solid var(--blue);
+  border-radius: 2.65625rem;
+  transition: background-color var(--transition), color var(--transition), border-color var(--transition);
+  background-color: var(--blue);
+  color: var(--white);
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.55;
+  text-align: center;
+  text-decoration: none;
+  
+  &:hover {
+    border-width: 0.125rem;
+    background-color: var(--white);
+    color: var(--blue);
+  }
+}
+
+.button--auto {
+  width: auto;
+}
+
+.button--small {
+  display: block;
+  width: auto;
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+
+  @media (--sm) {
+    display: inline-block;
+    margin-top: 0;
+    margin-left: 0.5rem;
+  }
+}
+
+.button--white {
+  border-color: var(--white);
+  background-color: var(--white);
+  color: var(--blue);
+  
+  &:hover {
+    background-color: var(--blue);
+    color: var(--white);
+  }
+}
+
+.button--shrink {
+  width: auto;
+  padding: 0.125rem 0.75rem;
+  font-size: 0.75rem;
+  
+  @media (--xl) {
+    padding: 0.3875rem 2rem;
+    font-size: 1.125rem;
+  }
+}
+
+.button--sidebar {
+  margin: 2rem 0;
+}
+
+.button--finder {
+  margin-top: 1rem;
+  @media (--xl) {
+    margin-top: 2rem;
+  }
+}
+
+.button-animate {
+  transition: background var(--transition);
+}
+
+.button-animating {
+  position: relative;
+  cursor: wait;
+  width: auto;
+  padding: 1.5rem;
+  &:hover,
+  &:focus {
+    background-color: var(--blue);
+  }
+  &::before {
+    position: absolute;
+    content: '';
+    margin: -13px 0 0 -13px;
+    width: 25px;
+    height: 25px;
+    border-radius: 25px;
+    background-clip: padding-box;
+    border: 2px solid var(--shadow);
+    border-top-color: var(--white);
+    animation: animation-rotate 750ms linear infinite;
+  }
+}
+
+.button-animating span,
+.button-animating:hover span,
+.button-animating:active span {
+  color: transparent;
+  display: none;
+}
