@@ -7,7 +7,11 @@
     "stylelint": "stylelint \"src/css/**/*.css\"",
     "eslint": "eslint \"src/js/**/*.js\"",
     "lint": "run-s stylelint eslint",
-    "deploy": "npm run webpack"
+    "deploy": "npm run webpack",
+    "production": "cross-env NODE_ENV=production webpack",
+    "development": "cross-env NODE_ENV=dev webpack",
+    "dev": "npm run development",
+    "prod": "npm run production"
   },
   "browserslist": [
     "> 1%",
@@ -51,6 +55,7 @@
     "browser-sync": "^2.23.5",
     "browser-sync-webpack-plugin": "^1.2.0",
     "clean-webpack-plugin": "^0.1.17",
+    "cross-env": "^5.2.0",
     "css-loader": "^0.28.8",
     "eslint": "^4.15.0",
     "eslint-config-airbnb-base": "^12.1.0",
