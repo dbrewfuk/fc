@@ -2,12 +2,12 @@ const path = require('path');
 const webpack = require('webpack');
 const CleanPlugin = require('clean-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-const NotifierPlugin = require('webpack-notifier');
+// const NotifierPlugin = require('webpack-notifier');
 const postcssImport = require('postcss-import');
 const postcssMixins = require('postcss-mixins');
 const postcssCssnext = require('postcss-cssnext');
 const postcssInlineSvg = require('postcss-inline-svg');
-const S3Plugin = require('webpack-s3-plugin');
+// const S3Plugin = require('webpack-s3-plugin');
 
 module.exports = {
   entry: {
@@ -109,10 +109,6 @@ module.exports = {
     ],
   },
   plugins: [
-    // new webpack.optimize.UglifyJsPlugin({
-    //   cache: true,
-    //   parallel: true,
-    // }),
     new CleanPlugin(['dist']),
     new BrowserSyncPlugin({
       files: [
@@ -122,18 +118,20 @@ module.exports = {
     }, {
       reload: false,
     }),
-    // new NotifierPlugin(),
-    // new S3Plugin({
-    //   directory: 'dist',
-    //   s3Options: {
-    //     accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-    //     secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-    //     region: 'us-west-2'
-    //   },
-    //   s3UploadOptions: {
-    //     Bucket: 'kctcs.v2.mstoner.com'
-    //   },
-    // }),
   ],
-  watch: true,
+  watch: process.env.NODE_ENV !== 'production',
 };
+
+if (process.env.NODE_ENV === 'production') {
+  module.exports.plugins = (module.exports.plugins || []).concat([
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: '"production"',
+      },
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      cache: true,
+      parallel: true,
+    }),
+  ]);
+}
