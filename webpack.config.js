@@ -71,7 +71,7 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              minimize: false,
+              minimize: (process.env.NODE_ENV) === 'production',
               importLoaders: 1,
             },
           },
@@ -122,18 +122,18 @@ module.exports = {
     }, {
       reload: false,
     }),
-    new NotifierPlugin(),
-    new S3Plugin({
-      directory: 'dist',
-      s3Options: {
-        accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-        region: 'us-west-2'
-      },
-      s3UploadOptions: {
-        Bucket: 'kctcs.v2.mstoner.com'
-      },
-    }),
+    // new NotifierPlugin(),
+    // new S3Plugin({
+    //   directory: 'dist',
+    //   s3Options: {
+    //     accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    //     secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    //     region: 'us-west-2'
+    //   },
+    //   s3UploadOptions: {
+    //     Bucket: 'kctcs.v2.mstoner.com'
+    //   },
+    // }),
   ],
   watch: true,
 };
