@@ -48,3 +48,6 @@
 @import 'modules/text-widget';
 @import 'modules/video-embed';
 @import 'modules/vslider';
+
+/* KCTCS modules */
+@import 'modules/tooltip.css';
