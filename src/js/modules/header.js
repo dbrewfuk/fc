@@ -46,9 +46,11 @@ const searchHeader = document.querySelector('.header__search');
 const searchButton = document.querySelector('.header__search__button');
 const searchInput = document.querySelector('.header__search__input');
 
-searchButton.addEventListener('click', (e) => {
-  if (searchInput && !searchInput.value) {
-    e.preventDefault();
-    searchHeader.classList.remove('focus-within');
-  }
-});
+if(searchButton !== null){
+	searchButton.addEventListener('click', (e) => {
+		if (searchInput && !searchInput.value) {
+			e.preventDefault();
+			searchHeader.classList.remove('focus-within');
+		}
+	});
+}
