@@ -1,3 +1,5 @@
+import 'core-js';
+
 // utilities
 import 'what-input';
 import './util/focus-within';
