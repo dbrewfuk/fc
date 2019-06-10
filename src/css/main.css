@@ -1,7 +1,9 @@
 /* dependencies */
+
 @import 'normalize.css';
 
 /* utilities */
+
 @import 'util/variables';
 @import 'util/mixins';
 @import 'util/base';
@@ -12,6 +14,7 @@
 @import 'util/kctcs';
 
 /* modules */
+
 @import 'modules/accordion';
 @import 'modules/alert';
 @import 'modules/banner';
@@ -34,6 +37,7 @@
 @import 'modules/hslider';
 @import 'modules/icon-link';
 @import 'modules/link-list';
+@import 'modules/lists';
 @import 'modules/main';
 @import 'modules/next-section';
 @import 'modules/overlay';
@@ -50,4 +54,5 @@
 @import 'modules/vslider';
 
 /* KCTCS modules */
+
 @import 'modules/tooltip.css';
