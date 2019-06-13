@@ -1,9 +1,8 @@
 .canvas {
-  position: relative;
-  padding-top: 8.25rem;
-  overflow: hidden;
-
-  @media (--lg) {
-    padding-top: 16rem;
-  }
+    position: relative;
+    padding-top: 8.25rem;
+    overflow: hidden;
+    @media (--lg) {
+        padding-top: 16rem;
+    }
 }
