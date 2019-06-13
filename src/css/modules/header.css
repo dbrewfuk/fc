@@ -124,19 +124,25 @@
 
 .header__menu-toggle {
     position: absolute;
-    top: 0;
+    top: 1.4rem;
     right: 0;
     width: 3.5rem;
     height: 3.5rem;
     padding: 0;
     border: 0;
-    background-color: var(--blue);
+    background-color: var(--blue-dark);
     background-image: svg-load('icon-menu.svg', stroke: var(--white));
     background-position: center;
     background-repeat: no-repeat;
     background-size: 1.5rem 1.5rem;
     @media (--lg) {
         display: none;
+    }
+    @nest .scrolling-down & {
+        top: 0;
+    }
+    @nest .scrolling-up & {
+        top: 0;
     }
 }
 
