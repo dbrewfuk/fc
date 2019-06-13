@@ -51,11 +51,6 @@
             border-top: 0;
         }
     }
-    @nest .scrolling-down & .canvas & {
-        @media (--lg) {
-            top: -11.5625rem;
-        }
-    }
 }
 
 .header__container {
