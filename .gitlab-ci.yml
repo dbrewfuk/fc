@@ -11,3 +11,5 @@ build_and_publish:
     - node deploy.js
   only:
     - master
+    changes:
+      - src/**/*{js, css}
