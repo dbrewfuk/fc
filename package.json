@@ -39,12 +39,13 @@
     }
   },
   "dependencies": {
+    "axios": "^0.19.0",
     "core-js": "^3.0.1",
     "debug": "^3.1.0",
     "flickity": "^2.0.10",
     "flickity-imagesloaded": "^2.0.0",
-    "jquery": "^3.3.1",
     "normalize.css": "^7.0.0",
+    "pretty-error": "^2.1.1",
     "smoothscroll-polyfill": "^0.4.0",
     "what-input": "^5.0.4",
     "xml-js": "^1.6.2"
@@ -74,8 +75,6 @@
     "stylelint": "^8.4.0",
     "stylelint-config-standard": "^18.0.0",
     "svgo": "^1.0.3",
-    "webpack": "^3.10.0",
-    "webpack-notifier": "^1.5.0",
-    "webpack-s3-plugin": "^1.0.0-rc.0"
+    "webpack": "^3.10.0"
   }
 }
