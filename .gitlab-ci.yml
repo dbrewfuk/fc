@@ -10,4 +10,7 @@ build_and_publish:
     - npm run prod
     - node deploy.js
   only:
-    - master
+    refs:
+      - master
+    changes:
+      - src/**/*{js, css}
