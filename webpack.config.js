@@ -2,12 +2,10 @@ const path = require('path');
 const webpack = require('webpack');
 const CleanPlugin = require('clean-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-// const NotifierPlugin = require('webpack-notifier');
 const postcssImport = require('postcss-import');
 const postcssMixins = require('postcss-mixins');
 const postcssCssnext = require('postcss-cssnext');
 const postcssInlineSvg = require('postcss-inline-svg');
-// const S3Plugin = require('webpack-s3-plugin');
 
 module.exports = {
   entry: {
