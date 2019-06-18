@@ -44,6 +44,7 @@
     "debug": "^3.1.0",
     "flickity": "^2.0.10",
     "flickity-imagesloaded": "^2.0.0",
+    "jquery": "^3.4.1",
     "normalize.css": "^7.0.0",
     "pretty-error": "^2.1.1",
     "smoothscroll-polyfill": "^0.4.0",
