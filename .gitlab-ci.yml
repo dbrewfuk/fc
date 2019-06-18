@@ -13,4 +13,4 @@ build_and_publish:
     refs:
       - master
     changes:
-      - src/**/*.{js, css}
+      - src/**/*.{js,css}
