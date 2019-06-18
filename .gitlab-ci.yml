@@ -1,0 +1,11 @@
+stages:
+  - Build and Publish
+
+build_and_publish:
+  stage: Build and Publish
+  script:
+    - npm install
+    - npm run prod
+    - node deploy.js
+  only:
+    - master
