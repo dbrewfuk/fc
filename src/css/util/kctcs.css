@@ -14,3 +14,11 @@
   -ms-flex-direction: column;
   flex-direction: column;
 }
+
+.m-0 {
+  margin: 0;
+}
+
+.m-1 {
+  margin: 0.25rem;
+}
