@@ -1,3 +1,5 @@
+image: edbizarro/gitlab-ci-pipeline-php:7.3
+
 stages:
   - Build and Publish
 
