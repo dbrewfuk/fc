@@ -84,6 +84,7 @@ module.exports = {
                 postcssInlineSvg({
                   path: path.resolve(__dirname, 'img'),
                 }),
+                require('tailwindcss'),
               ],
             },
           },
