@@ -1,5 +1,4 @@
 /* dependencies */
-
 @import 'normalize.css';
 
 /* utilities */
@@ -56,3 +55,9 @@
 /* KCTCS modules */
 
 @import 'modules/tooltip.css';
+
+@import "tailwindcss/utilities";
+
+.bg-blue-overlay {
+    background-color: rgba(0, 71, 127, .95);
+}

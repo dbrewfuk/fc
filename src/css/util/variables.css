@@ -9,10 +9,10 @@
   --sans-serif: 'Work Sans', sans-serif;
 
   /* colors */
-  --blue: #00477f;
+  --blue: #00467f;
   --blue-dark: #013057;
   --blue-overlay: color(var(--blue) alpha(95%));
-  --gold: #dea128;
+  --gold: #e7a614;
   --white: #fff;
   --gray: #f2f2f2;
   --gray-darker: #ccc;
