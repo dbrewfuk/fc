@@ -15,10 +15,6 @@
     }
 }
 
-.header--transparent {
-    background-color: #013057 !important;
-}
-
 .header--collapsed {
     position: fixed;
     top: -3.5rem;
