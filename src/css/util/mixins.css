@@ -1,188 +1,185 @@
 @define-mixin clear {
-  &::after {
-    content: '';
-    display: table;
-    clear: both;
-  }
+    &::after {
+        content: '';
+        display: table;
+        clear: both;
+    }
 }
 
 @define-mixin hide {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
 }
 
-@define-mixin svg-add $name, $width, $height {
-  .svg--$(name)::before {
-    padding-top: calc($height / $width * 100%);
-  }
+@define-mixin svg-add $name,
+$width,
+$height {
+    .svg--$(name)::before {
+        padding-top: 21.32075%;
+    }
 }
+
 
 /* layout */
+
 @define-mixin container {
-  width: 100%;
-  max-width: 90rem;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 2rem;
-  padding-left: 2rem;
+    width: 100%;
+    max-width: 90rem;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 2rem;
+    padding-left: 2rem;
 }
 
-/* typography */
-@define-mixin h1 {
-  margin-top: 2em;
-  font-size: 2rem;
-  font-weight: 300;
-  line-height: 1;
 
-  @media (--md) {
-    margin-top: 1em;
-    font-size: 5.125rem;
-  }
+/* typography */
+
+@define-mixin h1 {
+    margin-top: 2em;
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1;
+    @media (--md) {
+        margin-top: 1em;
+        font-size: 5.125rem;
+    }
 }
 
 @define-mixin h2 {
-  margin-top: 2em;
-  font-size: 1.375rem;
-  font-weight: 700;
-  letter-spacing: 0.25rem;
-  line-height: 1.15;
-  text-transform: uppercase;
-
-  @media (--md) {
-    font-size: 2.25rem;
-  }
+    margin-top: 2em;
+    font-size: 1.375rem;
+    font-weight: 700;
+    letter-spacing: 0.25rem;
+    line-height: 1.15;
+    text-transform: uppercase;
+    @media (--md) {
+        font-size: 2.25rem;
+    }
 }
 
 @define-mixin h3 {
-  margin-top: 2em;
-  font-size: 1.3125rem;
-  font-weight: 700;
-  line-height: 1.15;
-
-  @media (--md) {
-    font-size: 1.875rem;
-  }
+    margin-top: 2em;
+    font-size: 1.3125rem;
+    font-weight: 700;
+    line-height: 1.15;
+    @media (--md) {
+        font-size: 1.875rem;
+    }
 }
 
 @define-mixin h4 {
-  margin-top: 2em;
-  font-size: 1.25rem;
-  font-weight: 700;
-  line-height: 1.5;
-
-  @media (--md) {
-    font-size: 1.375rem;
-  }
+    margin-top: 2em;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.5;
+    @media (--md) {
+        font-size: 1.375rem;
+    }
 }
 
 @define-mixin h5 {
-  margin-top: 2em;
-  font-size: 1.125rem;
-  font-weight: 700;
-  line-height: 1.2;
-
-  @media (--md) {
-    font-size: 1.25rem;
-  }
+    margin-top: 2em;
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.2;
+    @media (--md) {
+        font-size: 1.25rem;
+    }
 }
 
 @define-mixin h6 {
-  margin-top: 2em;
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 0.0625rem;
-  line-height: 1.25;
-  text-transform: uppercase;
+    margin-top: 2em;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.0625rem;
+    line-height: 1.25;
+    text-transform: uppercase;
 }
 
 @define-mixin text-testimonial {
-  font-size: 1.5rem;
-  font-weight: 300;
-  line-height: 1.1875;
-
-  @media (--md) {
-    font-size: 3rem;
-  }
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.1875;
+    @media (--md) {
+        font-size: 3rem;
+    }
 }
 
 @define-mixin text-intro {
-  font-size: 1.25rem;
-  font-weight: 700;
-  line-height: 1.5;
-
-  @media (--md) {
-    font-size: 1.5rem;
-  }
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.5;
+    @media (--md) {
+        font-size: 1.5rem;
+    }
 }
 
 @define-mixin text-large {
-  font-size: 1.25rem;
-  line-height: 1.4;
+    font-size: 1.25rem;
+    line-height: 1.4;
 }
 
 @define-mixin text-caption {
-  font-size: 0.875rem;
-  font-weight: 700;
-  line-height: 1.4;
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1.4;
 }
 
 @define-mixin text-list-cta {
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 0.0625rem;
-  line-height: 1.25;
-  text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.0625rem;
+    line-height: 1.25;
+    text-transform: uppercase;
 }
 
 @define-mixin text-main-nav {
-  font-size: 1.5rem;
-  font-weight: 700;
-  line-height: 1.25;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.25;
 }
 
 @define-mixin text-subnav {
-  font-size: 1rem;
-  font-weight: 700;
+    font-size: 1rem;
+    font-weight: 700;
 }
 
 @define-mixin link {
-  transition: border-bottom var(--transition);
-  border-bottom: 0.0625em solid;
-  color: inherit;
-  text-decoration: none;
-
-  &:hover {
-    border-bottom-width: 0.25em;
-  }
+    transition: border-bottom var(--transition);
+    border-bottom: 0.0625em solid;
+    color: inherit;
+    text-decoration: none;
+    &:hover {
+        border-bottom-width: 0.25em;
+    }
 }
 
-/* visual */
-@define-mixin clip-tl {
-  clip-path: polygon(0 1.5rem, 1.5rem 0, 100% 0, 100% 100%, 0 100%);
 
-  @media (--md) {
-    clip-path: polygon(0 3rem, 3rem 0, 100% 0, 100% 100%, 0 100%);
-  }
+/* visual */
+
+@define-mixin clip-tl {
+    clip-path: polygon(0 1.5rem, 1.5rem 0, 100% 0, 100% 100%, 0 100%);
+    @media (--md) {
+        clip-path: polygon(0 3rem, 3rem 0, 100% 0, 100% 100%, 0 100%);
+    }
 }
 
 @define-mixin clip-br {
-  clip-path: polygon(100% calc(100% - 1.5rem), calc(100% - 1.5rem) 100%, 0 100%, 0 0, 100% 0);
-
-  @media (--md) {
-    clip-path: polygon(100% calc(100% - 3rem), calc(100% - 3rem) 100%, 0 100%, 0 0, 100% 0);
-  }
+    clip-path: polygon(100% calc(100% - 1.5rem), calc(100% - 1.5rem) 100%, 0 100%, 0 0, 100% 0);
+    @media (--md) {
+        clip-path: polygon(100% calc(100% - 3rem), calc(100% - 3rem) 100%, 0 100%, 0 0, 100% 0);
+    }
 }
 
 @define-mixin clip-tl-br {
-  clip-path: polygon(0 1.5rem, 1.5rem 0, 100% 0, 100% calc(100% - 1.5rem), calc(100% - 1.5rem) 100%, 0 100%);
-
-  @media (--md) {
-    clip-path: polygon(0 3rem, 3rem 0, 100% 0, 100% calc(100% - 3rem), calc(100% - 3rem) 100%, 0 100%);
-  }
+    clip-path: polygon(0 1.5rem, 1.5rem 0, 100% 0, 100% calc(100% - 1.5rem), calc(100% - 1.5rem) 100%, 0 100%);
+    @media (--md) {
+        clip-path: polygon(0 3rem, 3rem 0, 100% 0, 100% calc(100% - 3rem), calc(100% - 3rem) 100%, 0 100%);
+    }
 }

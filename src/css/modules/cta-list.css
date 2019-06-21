@@ -1,122 +1,109 @@
 .cta-list {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 0 0 -2rem;
-  padding: 0;
-  list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 0 -2rem;
+    padding: 0;
+    list-style: none;
 }
 
 .cta-list__item {
-  width: calc(100% - 2rem);
-  margin-left: 2rem;
-  border-bottom: 0.125rem solid var(--gold);
-
-  @media (--md) {
-    width: calc(50% - 2rem);
-  }
-
-  @media (--lg) {
-    width: calc(33.333% - 2rem);
-  }
-
-  &:nth-child(1) {
-    border-top: 0.125rem solid var(--gold);
-  }
-
-  &:nth-child(2) {
+    width: calc(100% - 2rem);
+    margin-left: 2rem;
+    border-bottom: 0.125rem solid var(--gold);
     @media (--md) {
-      border-top: 0.125rem solid var(--gold);
+        width: calc(50% - 2rem);
     }
-  }
-
-  &:nth-child(3) {
     @media (--lg) {
-      border-top: 0.125rem solid var(--gold);
+        width: calc(33.333% - 2rem);
     }
-  }
+    &:nth-child(1) {
+        border-top: 0.125rem solid var(--gold);
+    }
+    &:nth-child(2) {
+        @media (--md) {
+            border-top: 0.125rem solid var(--gold);
+        }
+    }
+    &:nth-child(3) {
+        @media (--lg) {
+            border-top: 0.125rem solid var(--gold);
+        }
+    }
 }
 
 .cta-list__item--stack {
-  width: calc(100% - 2rem);
-
-  &:nth-child(2),
-  &:nth-child(3) {
-    border-top: 0;
-  }
+    width: calc(100% - 2rem);
+    &:nth-child(2),
+    &:nth-child(3) {
+        border-top: 0;
+    }
 }
 
 .cta-list__link {
-  @mixin text-list-cta;
-
-  display: block;
-  width: 100%;
-  position: relative;
-  padding: 1.25rem 5.5rem 1.25rem 0;
-  border: 0;
-  transition: padding var(--transition);
-  background-color: transparent;
-  text-align: left;
-
-  &::after {
-    content: '';
-    position: absolute;
-    right: 1.5rem;
-    top: 50%;
-    transform: translate(-1.5rem, -50%);
-    width: 2.5rem;
-    height: 2.5rem;
-    transition: transform var(--transition), opacity var(--transition);
-    background-image: svg-load('icon-arrow-right.svg', fill: var(--blue));
-    background-size: 2.5rem 2.5rem;
-    opacity: 0;
-  }
-
-  &:hover {
-    padding-right: 4rem;
-    padding-left: 1.5rem;
-
+    @mixin text-list-cta;
+    display: block;
+    width: 100%;
+    position: relative;
+    padding: 1.25rem 5.5rem 1.25rem 0;
+    border: 0;
+    transition: padding var(--transition);
+    background-color: transparent;
+    text-align: left;
     &::after {
-      transform: translate(0, -50%);
-      opacity: 1;
+        content: '';
+        position: absolute;
+        right: 1.5rem;
+        top: 50%;
+        transform: translate(-1.5rem, -50%);
+        width: 2.5rem;
+        height: 2.5rem;
+        transition: transform var(--transition), opacity var(--transition);
+        background-image: svg-load('icon-arrow-right.svg', fill: var(--blue));
+        background-size: 2.5rem 2.5rem;
+        opacity: 0;
     }
-  }
+    &:hover {
+        padding-right: 4rem;
+        padding-left: 1.5rem;
+        &::after {
+            transform: translate(0, -50%);
+            opacity: 1;
+        }
+    }
 }
 
 .cta-list__link--white {
-  &::after {
-    background-image: svg-load('icon-arrow-right.svg', fill: var(--white));
-  }
+    &::after {
+        background-image: svg-load('icon-arrow-right.svg', fill: var(--white));
+    }
 }
 
 .cta-list__link--map {
-  &::before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 50%;
-    right: auto;
-    left: 0.75rem;
-    width: 1.75rem;
-    height: 1.75rem;
-    transform: translate(-3rem, -50%);
-    transition: transform var(--transition), opacity var(--transition);
-    background-image: svg-load('icon-marker.svg', fill: var(--gold));
-    background-size: 1.75rem 1.75rem;
-    opacity: 0;
-  }
-
-  &.cta-list__link--active {
-    padding-right: 0.75rem;
-    padding-left: 3.25rem;
-
     &::before {
-      transform: translate(0, -50%);
-      opacity: 1;
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: auto;
+        left: 0.75rem;
+        width: 1.75rem;
+        height: 1.75rem;
+        transform: translate(-3rem, -50%);
+        transition: transform var(--transition), opacity var(--transition);
+        background-image: svg-load('icon-marker.svg', fill: var(--gold));
+        background-size: 1.75rem 1.75rem;
+        opacity: 0;
     }
-
-    &::after {
-      transform: translate(-1.5rem, -50%);
-      opacity: 0;
+    &.cta-list__link--active {
+        padding-right: 0.75rem;
+        padding-left: 3.25rem;
+        &::before {
+            transform: translate(0, -50%);
+            opacity: 1;
+        }
+        &::after {
+            transform: translate(-1.5rem, -50%);
+            opacity: 0;
+        }
     }
-  }
 }
