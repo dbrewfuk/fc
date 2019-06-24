@@ -10,7 +10,7 @@
   color: var(--white);
 
   @media (--md) {
-    padding: 6rem 4rem;
+    padding: 5rem 4rem;
   }
 }
 
@@ -41,6 +41,10 @@
 
 .testimonial__content {
   margin-top: 2rem;
+
+  @media (--lg) {
+    margin-top: 0;
+  }
 }
 
 .testimonial__source-container {
