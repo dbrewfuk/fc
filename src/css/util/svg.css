@@ -20,7 +20,7 @@
   padding-top: 100%;
 }
 
-@mixin svg-add logo-maysville, 212, 130;
+@mixin svg-add logo-maysville, 272, 57.98;
 @mixin svg-add logo-maysville-text, 188.146, 43.189;
 @mixin svg-add logo-system, 748.15, 14.148;
 @mixin svg-add logo-system-stacked, 302.798, 36.004;

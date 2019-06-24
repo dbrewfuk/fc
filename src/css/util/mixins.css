@@ -21,7 +21,7 @@
 $width,
 $height {
     .svg--$(name)::before {
-        padding-top: 21.32075%;
+        padding-top: calc($height / $width * 100%);
     }
 }
 
