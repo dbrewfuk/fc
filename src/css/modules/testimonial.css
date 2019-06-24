@@ -10,14 +10,14 @@
   color: var(--white);
 
   @media (--md) {
-    padding: 5rem 4rem;
+    padding: 4rem;
   }
 }
 
 .testimonial__container {
   @mixin container;
 
-  max-width: 52rem;
+  max-width: 60rem;
   padding: 0;
 
   @media (--lg) {
