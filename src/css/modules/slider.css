@@ -39,7 +39,6 @@
     max-width: 100%;
     margin: 0 1rem;
     background-color: var(--white);
-    height: 100%;
 
     @nest .flickity-resize& {
       min-height: 100%;
