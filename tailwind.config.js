@@ -35,7 +35,7 @@ module.exports = {
     backgroundColor: ['hover', 'focus'],
     borderColor: ['hover', 'focus'],
     borderRadius: [],
-    borderStyle: ['hover', 'group-hover'],
+    borderStyle: ['group-hover'],
     borderWidth: [],
     boxShadow: ['hover', 'focus'],
     fontSmoothing: [],
