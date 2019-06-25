@@ -10,10 +10,9 @@ Publish CSS:
     - npm run prod
     - node deploy/css.js "$CI_COMMIT_MESSAGE"
   artifacts:
-    expires_in:
-      - 4 weeks
+    expire_in: 4 weeks
     paths:
-      -dist/css
+      - dist/css
   only:
     refs:
       - master
@@ -28,10 +27,9 @@ Publish JS:
     - npm run prod
     - node deploy/js.js "$CI_COMMIT_MESSAGE"
   artifacts:
-    expires_in:
-      - 4 weeks
+    expire_in: 4 weeks
     paths:
-      -dist/js
+      - dist/js
   only:
     refs:
       - master
