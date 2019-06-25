@@ -3,14 +3,37 @@ image: edbizarro/gitlab-ci-pipeline-php:7.3
 stages:
   - Build and Publish
 
-build_and_publish:
+Publish CSS:
   stage: Build and Publish
   script:
     - npm install
     - npm run prod
-    - node deploy.js
+    - node deploy/css.js "$CI_COMMIT_MESSAGE"
+  artifacts:
+    expires_in:
+      - 4 weeks
+    paths:
+      -dist/css
   only:
     refs:
       - master
     changes:
-      - src/**/*.{js,css}
+      - src/**/*.css
+
+
+Publish JS:
+  stage: Build and Publish
+  script:
+    - npm install
+    - npm run prod
+    - node deploy/js.js "$CI_COMMIT_MESSAGE"
+  artifacts:
+    expires_in:
+      - 4 weeks
+    paths:
+      -dist/js
+  only:
+    refs:
+      - master
+    changes:
+      - src/**/*.js
