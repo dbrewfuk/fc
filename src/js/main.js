@@ -1,4 +1,4 @@
-import 'core-js';
+// import 'core-js';
 
 // utilities
 import 'what-input';
