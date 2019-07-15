@@ -55,11 +55,6 @@ module.exports = {
   corePlugins: {
     preflight: false,
     container: false,
-    appearance: false,
-    backgroundAttachment: false,
-    backgroundPosition: false,
-    backgroundRepeat: false,
-    backgroundSize: false,
     float: false,
     fontFamily: false,
     objectFit: false,
