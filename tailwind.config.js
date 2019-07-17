@@ -26,6 +26,7 @@ module.exports = {
       '24': '6rem',
       '32': '8rem',
       '40': '10rem',
+      '48': '12rem',
     },
 
     extend: {}
