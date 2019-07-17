@@ -18,6 +18,7 @@ Publish CSS:
       - master
     changes:
       - src/**/*.css
+      - tailwind.config.js
 
 
 Publish JS:
