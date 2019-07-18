@@ -29,7 +29,11 @@ module.exports = {
       '48': '12rem',
     },
 
-    extend: {}
+    extend: {
+      maxHeight: {
+        '48': '12rem',
+      },
+    }
   },
 
   variants: {
