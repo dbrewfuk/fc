@@ -55,11 +55,14 @@ module.exports = {
     zIndex: [],
   },
 
-  plugins: [],
+  plugins: [
+    require('./src/tailwind/plugins/display'),
+  ],
 
   corePlugins: {
     preflight: false,
     container: false,
+    display: false,
     float: false,
     fontFamily: false,
     objectFit: false,
