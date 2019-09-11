@@ -27,21 +27,23 @@
 
 .hslider__items {
   & .flickity-page-dots {
-    position: absolute;
-    bottom: 1rem;
-    left: 50%;
+    /*position: absolute;*/
+    /*bottom: 1rem;*/
+    /*left: 50%;*/
+    /*transform: translateX(-50%);*/
     display: flex;
+    justify-content: center;
     margin: 0;
     padding: 0;
-    transform: translateX(-50%);
     z-index: 1;
 
-    @media (--lg) {
-      flex-direction: column;
-      right: 3rem;
-      bottom: 50%;
-      left: auto;
-      transform: translateY(50%);
+    /*@media (--lg) {*/
+    /*  flex-direction: column;*/
+    /*  right: 3rem;*/
+    /*  bottom: 50%;*/
+    /*  left: auto;*/
+    /*  transform: translateY(50%);*/
+    /*}*/
     }
   }
 
