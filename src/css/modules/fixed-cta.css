@@ -13,6 +13,11 @@
     bottom: -4.875rem;
     height: 4.875rem;
   }
+
+  &.focus-within {
+     transform: translate3d(0, -100%, 0);
+     box-shadow: var(--box-shadow);
+   }
 }
 
 .fixed-cta--active {
