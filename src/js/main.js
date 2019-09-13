@@ -12,6 +12,7 @@ import './modules/alert';
 import './modules/campus';
 import './modules/fixed-cta';
 import './modules/header';
+import './modules/hero';
 import './modules/hslider';
 import './modules/program-finder';
 import './modules/slider';
