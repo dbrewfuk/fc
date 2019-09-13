@@ -319,11 +319,16 @@ const searchInput = () => {
     }
 };
 
-input.addEventListener("keyup", () => {
-  searchInput();
-});
+if (input) {
+  input.addEventListener("keyup", () => {
+    searchInput();
+  });
+}
 
-document.getElementById("searchClear").addEventListener("click", () => {
-  input.value = "";
-  searchInput();
-});
+const clearSearchButton = document.getElementById("searchClear");
+if (clearSearchButton) {
+  clearSearchButton.addEventListener("click", () => {
+    input.value = "";
+    searchInput();
+  });
+}
