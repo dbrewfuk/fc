@@ -1,6 +1,5 @@
 const $ = require('jquery');
 
-
 // vars
 let lastFocus;
 let optionButtons;
@@ -271,11 +270,60 @@ const clearFilters = () => {
 });
 
 
-
-
 if (clearButton != null) {
   clearButton.addEventListener('click', () => {
     clearFilters();
     filterCards();
   });
 }
+
+// Program finder search input
+const input = document.getElementById('searchInput');
+
+const searchInput = () => {
+  let content, titles, filter, searchItem1, searchItem2, cards, clearID;
+
+    //Grab all of the needed HTML elements
+    filter = input.value.toUpperCase();
+    titles = document.getElementsByClassName("card__title");
+    content = document.getElementsByClassName("card_desc");
+    cards = document.getElementsByClassName("card");
+    clearID = document.getElementById("searchClear");
+
+    // Transitions clear search button
+    if (filter.length >= 1) {
+      clearID.classList.add("opacity-100", "cursor-pointer");
+    }
+    else if (filter.length === 0) {
+      clearID.classList.remove("opacity-100", "cursor-pointer");
+    }
+
+    // Searching the elements (titles and descriptions/content)
+    for (let i = 0; i < titles.length; i++) {
+
+        searchItem1 =  content[i].innerHTML.replace(/\s+/g, ' ').toUpperCase();
+        searchItem2 = titles[i].innerHTML.toUpperCase();
+
+        if (searchItem1.indexOf(filter) > -1) {
+            cards[i].style.display = "";
+        }
+
+        else if (searchItem2.indexOf(filter) > -1) {
+            cards[i].style.display = "";
+        }
+
+        else {
+            cards[i].style.display = "none";
+        }
+
+    }
+};
+
+input.addEventListener("keyup", () => {
+  searchInput();
+});
+
+document.getElementById("searchClear").addEventListener("click", () => {
+  input.value = "";
+  searchInput();
+});
