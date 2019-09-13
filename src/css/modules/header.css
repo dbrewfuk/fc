@@ -38,7 +38,8 @@
             background-color: var(--white);
         }
     }
-    @nest .scrolling-up &, &.focus-within {
+    @nest .scrolling-up &,
+    &.focus-within {
         transform: translate3d(0, 100%, 0);
         box-shadow: var(--box-shadow);
         @media (--lg) {
