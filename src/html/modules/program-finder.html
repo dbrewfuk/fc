@@ -1,98 +1,107 @@
 <div class="program-finder{% if page.global %} program-finder-global{% endif %}">
   <div class="program-finder__container">
-    <ul class="program-finder__filters">
-      <li class="program-finder__filters__item">
-        <span class="program-finder__filters__heading">Filter by:</span>
-      </li>
-      {% if page.global %}
-      <li class="program-finder__filters__item">
-        <button class="program-finder__filters__button--fetch">College</button>
-        <div class="program-finder__select">
-          <div class="program-finder__select__overlay"></div>
-          <div class="program-finder__select__wrap">
-            <button class="program-finder__option--fetch program-finder__option--active" data-type-college="*">College</button>
-            <button class="program-finder__option--fetch" data-type-college="//southcentral.kctcs.edu/education-training/program-finder/index.program.xml">South Central</button>
-            <button class="program-finder__option--fetch" data-type-college="//elizabethtown.kctcs.edu/education-training/program-finder/index.program.xml">Elisabethtown</button>
-            <button class="program-finder__option--fetch" data-type-college="//maysville.kctcs.edu/education-training/program-finder/index.program.xml">Maysville</button>
-            <button class="program-finder__option--fetch" data-type-college="Maysville">College4</button>
-            <button class="program-finder__option--fetch" data-type-college="college5">College5</button>
-            <button class="program-finder__option--fetch" data-type-college="college6">College6</button>
-          </div>
-        </div>
-      </li>
-      {% endif %}
-      <li class="program-finder__filters__item">
-        <button class="program-finder__filters__button--alt"{% if page.global %} disabled{% endif %}>I want to</button>
-        <div class="program-finder__select">
-          <div class="program-finder__select__overlay"></div>
-          <div class="program-finder__select__wrap">
-            <label for="t0" class="program-finder__checkbox" data-type-t="Help_Others">
-              <input type="checkbox" id="t0">
-              <span>Help others</span>
-            </label>
-            <label for="t1" class="program-finder__checkbox" data-type-t="Work_With_Technology">
-              <input type="checkbox" id="t1">
-              <span>Work with Technology</span>
-            </label>
-            <label for="t2" class="program-finder__checkbox" data-type-t="Work_With_Hands">
-              <input type="checkbox" id="t2">
-              <span>Work with hands</span>
-            </label>
-            <label for="t3" class="program-finder__checkbox" data-type-t="Be_Outside">
-              <input type="checkbox" id="t3">
-              <span>Be outside</span>
-            </label>
-            <label for="t4" class="program-finder__checkbox" data-type-t="Be_Creative">
-              <input type="checkbox" id="t4">
-              <span>Be creative</span>
-            </label>
-            <label for="t5" class="program-finder__checkbox" data-type-t="Crunch_Numbers">
-              <input type="checkbox" id="t5">
-              <span>Crunch numbers</span>
-            </label>
-            <label for="t6" class="program-finder__checkbox" data-type-t="teach">
-              <input type="checkbox" id="t6">
-              <span>Teach others</span>
-            </label>
-
-            <button class="button button--finder">Apply</button>
-          </div>
-        </div>
-      </li>
-      <li class="program-finder__filters__item">
-        <button class="program-finder__filters__button"{% if page.global %} disabled{% endif %}>Program Type</button>
-        <div class="program-finder__select">
-          <div class="program-finder__select__overlay"></div>
-          <div class="program-finder__select__wrap">
-            <button class="program-finder__option program-finder__option--active" data-type-pt="*">Program Type</button>
-            <button class="program-finder__option" data-type-pt="Allied_Health">Allied Health</button>
-            <button class="program-finder__option" data-type-pt="Business">Business</button>
-            <button class="program-finder__option" data-type-pt="Engineering_Technology">Engineering Technology</button>
-            <button class="program-finder__option" data-type-pt="Humanities">Humanities</button>
-            <button class="program-finder__option" data-type-pt="Life_and_Natural_Science">Life and Natural Science</button>
-            <button class="program-finder__option" data-type-pt="Social_and_Behavioral_Science">Social and Behavioral Science</button>
-          </div>
-        </div>
-      </li>
-
-      <li class="program-finder__filters__item">
-        <button class="program-finder__filters__button"{% if page.global %} disabled{% endif %}>Credential Type</button>
-        <div class="program-finder__select">
-          <div class="program-finder__select__overlay"></div>
-          <div class="program-finder__select__wrap">
-            <button class="program-finder__option program-finder__option--active" data-type-c="*">Credential Type</button>
-            <button class="program-finder__option" data-type-c="Degree">Degree</button>
-            <button class="program-finder__option" data-type-c="Certificate">Certificate</button>
-            <button class="program-finder__option" data-type-c="Diploma">Diploma</button>
-          </div>
-        </div>
-      </li>
-    </ul>
-    <button class="program-finder__clear">{{ svg('icon-x', 'program-finder__clear__icon') }} <span class="program-finder__clear__text">Clear Filters</span></button>
-    <div class="grid grid--flush{% if page.global %} program-global-list{% endif %}">
-      {% if not page.global %}
-        {% include "modules/card-finder.html" %}
-      {% endif %}
+      <div class="program-finder-search__container">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 21">
+             <path d="M20.61 18.86l-5.75-5.752a8.139 8.139 0 0 0 1.575-4.848A8.298 8.298 0 0 0 8.186-.002a8.153 8.153 0 0 0-8.19 8.203 8.298 8.298 0 0 0 8.25 8.262 8.11 8.11 0 0 0 4.862-1.592l.006-.004 5.744 5.747a1.24 1.24 0 1 0 1.752-1.753zM8.239 14.816a6.638 6.638 0 0 1-6.6-6.61A6.525 6.525 0 0 1 8.19 1.645a6.638 6.638 0 0 1 6.6 6.61 6.525 6.525 0 0 1-6.552 6.562z"></path>
+          </svg>
+       <label for="searchInput" class="sr-only">Search Programs</labeL><input type="text" id="searchInput" placeholder="Search for your future...">
+       <button type="button" id="searchClear"><span class="sr-only">Clear search input</span><span>&times;</span></button>
     </div>
+    <div class="program-finder__filters__container">
+        <ul class="program-finder__filters">
+            <li class="program-finder__filters__item">
+              <span class="program-finder__filters__heading">Filter by:</span>
+            </li>
+            {% if page.global %}
+            <li class="program-finder__filters__item">
+              <button class="program-finder__filters__button--fetch">College</button>
+              <div class="program-finder__select">
+                <div class="program-finder__select__overlay"></div>
+                <div class="program-finder__select__wrap">
+                  <button class="program-finder__option--fetch program-finder__option--active" data-type-college="*">College</button>
+                  <button class="program-finder__option--fetch" data-type-college="//southcentral.kctcs.edu/education-training/program-finder/index.program.xml">South Central</button>
+                  <button class="program-finder__option--fetch" data-type-college="//elizabethtown.kctcs.edu/education-training/program-finder/index.program.xml">Elisabethtown</button>
+                  <button class="program-finder__option--fetch" data-type-college="//maysville.kctcs.edu/education-training/program-finder/index.program.xml">Maysville</button>
+                  <button class="program-finder__option--fetch" data-type-college="Maysville">College4</button>
+                  <button class="program-finder__option--fetch" data-type-college="college5">College5</button>
+                  <button class="program-finder__option--fetch" data-type-college="college6">College6</button>
+                </div>
+              </div>
+            </li>
+            {% endif %}
+            <li class="program-finder__filters__item">
+              <button class="program-finder__filters__button--alt"{% if page.global %} disabled{% endif %}>I want to</button>
+              <div class="program-finder__select">
+                <div class="program-finder__select__overlay"></div>
+                <div class="program-finder__select__wrap">
+                  <label for="t0" class="program-finder__checkbox" data-type-t="Help_Others">
+                    <input type="checkbox" id="t0">
+                    <span>Help others</span>
+                  </label>
+                  <label for="t1" class="program-finder__checkbox" data-type-t="Work_With_Technology">
+                    <input type="checkbox" id="t1">
+                    <span>Work with Technology</span>
+                  </label>
+                  <label for="t2" class="program-finder__checkbox" data-type-t="Work_With_Hands">
+                    <input type="checkbox" id="t2">
+                    <span>Work with hands</span>
+                  </label>
+                  <label for="t3" class="program-finder__checkbox" data-type-t="Be_Outside">
+                    <input type="checkbox" id="t3">
+                    <span>Be outside</span>
+                  </label>
+                  <label for="t4" class="program-finder__checkbox" data-type-t="Be_Creative">
+                    <input type="checkbox" id="t4">
+                    <span>Be creative</span>
+                  </label>
+                  <label for="t5" class="program-finder__checkbox" data-type-t="Crunch_Numbers">
+                    <input type="checkbox" id="t5">
+                    <span>Crunch numbers</span>
+                  </label>
+                  <label for="t6" class="program-finder__checkbox" data-type-t="teach">
+                    <input type="checkbox" id="t6">
+                    <span>Teach others</span>
+                  </label>
+      
+                  <button class="button button--finder">Apply</button>
+                </div>
+              </div>
+            </li>
+            <!-- <li class="program-finder__filters__item">
+              <button class="program-finder__filters__button"{% if page.global %} disabled{% endif %}>Program Type</button>
+              <div class="program-finder__select">
+                <div class="program-finder__select__overlay"></div>
+                <div class="program-finder__select__wrap">
+                  <button class="program-finder__option program-finder__option--active" data-type-pt="*">Program Type</button>
+                  <button class="program-finder__option" data-type-pt="Allied_Health">Allied Health</button>
+                  <button class="program-finder__option" data-type-pt="Business">Business</button>
+                  <button class="program-finder__option" data-type-pt="Engineering_Technology">Engineering Technology</button>
+                  <button class="program-finder__option" data-type-pt="Humanities">Humanities</button>
+                  <button class="program-finder__option" data-type-pt="Life_and_Natural_Science">Life and Natural Science</button>
+                  <button class="program-finder__option" data-type-pt="Social_and_Behavioral_Science">Social and Behavioral Science</button>
+                </div>
+              </div>
+            </li>
+      
+            <li class="program-finder__filters__item">
+              <button class="program-finder__filters__button"{% if page.global %} disabled{% endif %}>Credential Type</button>
+              <div class="program-finder__select">
+                <div class="program-finder__select__overlay"></div>
+                <div class="program-finder__select__wrap">
+                  <button class="program-finder__option program-finder__option--active" data-type-c="*">Credential Type</button>
+                  <button class="program-finder__option" data-type-c="Degree">Degree</button>
+                  <button class="program-finder__option" data-type-c="Certificate">Certificate</button>
+                  <button class="program-finder__option" data-type-c="Diploma">Diploma</button>
+                </div>
+              </div>
+            </li> -->
+          </ul>
+          <button class="program-finder__clear">{{ svg('icon-x', 'program-finder__clear__icon') }} <span class="program-finder__clear__text">Clear Filters</span></button>
+    </div>
+    <div class="grid grid--flush{% if page.global %} program-global-list{% endif %}">
+        {% if not page.global %}
+          {% include "modules/card-finder.html" %}
+        {% endif %}
+      </div>
   </div>
 </div>

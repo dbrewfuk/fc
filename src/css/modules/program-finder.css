@@ -11,9 +11,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   width: 100%;
-  margin: 0 0 4rem 0;
   padding: 0;
   list-style: none;
   
@@ -29,7 +28,7 @@
   
   @media (--lg) {
     width: auto;
-    margin: 0 0.75rem;
+    margin: 0 0.25rem;
   }
   
   &:first-child {
@@ -48,7 +47,7 @@
 .program-finder__filters__button--alt,
 .program-finder__filters__button--fetch {
   width: 100%;
-  padding: 0.75rem 2rem;
+  padding: 0.25rem 1rem;
   border: 0.25rem solid var(--gold);
   background-color: var(--white);
   &:disabled {
@@ -200,4 +199,65 @@
   width: 1rem;
   height: 1rem;
   margin-right: 0.5rem;
+}
+
+.program-finder-search__container svg {
+  width: 30px;
+  height: auto;
+  display: block;
+  padding: 0 5px 18px 0;
+}
+
+.program-finder-search__container {
+  display: flex;
+  align-items: flex-end;
+  align-content: center;
+  background-color: #f2f2f2;
+  border-bottom: 5px #00467f solid;
+  width: 100%;
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+#searchInput {
+  border: none;
+  background-color: #f2f2f2;
+  padding: 20px 5px 5px;
+  display: block;
+  font-size: 30px;
+  width: 100%;
+}
+
+#searchInput:focus-within {
+  outline: none;
+}
+
+#searchClear {
+  border: none;
+  background-color: #f2f2f2;
+  font-size: 30px;
+  cursor: default;
+  opacity: 0.0;
+  transition: none
+}
+
+#searchClear.fade {
+  opacity: 1.0;
+  cursor: pointer;
+  transition: 0.7s opacity
+}
+
+#searchClear:focus-within {
+  outline: none
+}
+
+.program-finder__filters__container {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  margin: 35px 0 0;
+}
+
+.program-finder__filters__container .program-finder__clear {
+  width: 15%
 }

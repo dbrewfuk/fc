@@ -1,6 +1,5 @@
 const $ = require('jquery');
 
-
 // vars
 let lastFocus;
 let optionButtons;
@@ -279,3 +278,116 @@ if (clearButton != null) {
     filterCards();
   });
 }
+
+const input = document.getElementById('searchInput');
+
+const searchInput = () => {
+  var content, titles, filter, searchItem1, searchItem2, cards, clearID;
+
+    //Grab all of the needed HTML elements
+    filter = input.value.toUpperCase();
+    titles = document.getElementsByClassName("card__title");
+    content = document.getElementsByClassName("card_desc");
+    cards = document.getElementsByClassName("card");
+    clearID = document.getElementById("searchClear");
+
+    // if (filter.length >= 1) {
+    //     document.getElementById('searchClear').style.display = "initial";
+    // }
+    // else if (filter.length == 0) {
+    //     document.getElementById('searchClear').style.display = "none";
+    // }
+
+    // Transitions clear search button
+    if (filter.length >= 1) {
+        clearID.className = 'fade';
+    }
+    else if (filter.length == 0) {
+        clearID.className = '';
+    }
+    
+    // Searching the elements (titles and descriptions/content)
+    for (let i = 0; i < titles.length; i++) {
+
+        searchItem1 =  content[i].innerHTML.replace(/\s+/g, ' ').toUpperCase();
+        searchItem2 = titles[i].innerHTML.toUpperCase();
+
+        if (searchItem1.indexOf(filter) > -1) {
+            cards[i].style.display = "";
+        }
+
+        else if (searchItem2.indexOf(filter) > -1) {
+            cards[i].style.display = "";
+        }
+
+        else {
+            cards[i].style.display = "none";
+        }
+
+    }
+}
+
+input.addEventListener("keyup", () => {
+  searchInput();
+
+})
+
+const searchClearButton = document.getElementById("searchClear");
+searchClearButton.addEventListener("click", () => {
+  input.value='';
+  searchInput();
+})
+
+
+// function searchBar() {
+//   var content, input, titles, filter, searchItem1, searchItem2, cards, clearID;
+
+//   //Grab all of the needed HTML elements
+//   input = document.getElementById('searchInput');
+//   filter = input.value.toUpperCase();
+//   titles = document.getElementsByClassName("card__title");
+//   content = document.getElementsByClassName("card_desc");
+//   cards = document.getElementsByClassName("card");
+//   clearID = document.getElementById("searchClear");
+
+//   // if (filter.length >= 1) {
+//   //     document.getElementById('searchClear').style.display = "initial";
+//   // }
+//   // else if (filter.length == 0) {
+//   //     document.getElementById('searchClear').style.display = "none";
+//   // }
+
+//   // Transitions clear search button
+//   if (filter.length >= 1) {
+//       clearID.className = 'fade';
+//   }
+//   else if (filter.length == 0) {
+//       clearID.className = '';
+//   }
+  
+//   // Searching the elements (titles and descriptions/content)
+//   for (i = 0; i < titles.length; i++) {
+
+//       searchItem1 =  content[i].innerHTML.replace(/\s+/g, ' ').toUpperCase();
+//       searchItem2 = titles[i].innerHTML.toUpperCase();
+
+//       if (searchItem1.indexOf(filter) > -1) {
+//           cards[i].style.display = "";
+//       }
+
+//       else if (searchItem2.indexOf(filter) > -1) {
+//           cards[i].style.display = "";
+//       }
+
+//       else {
+//           cards[i].style.display = "none";
+//       }
+
+//   }
+// }
+
+// Functionality for clear search button
+// function clearSearch() {
+//   document.getElementById('searchInput').value='';
+//   searchBar();
+// }
