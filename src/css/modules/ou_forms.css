@@ -1,0 +1,20 @@
+.ou-form.alert {
+    border-radius: .25rem;
+    padding: .75rem;
+    overflow: hidden;
+    border: none;
+
+    &.alert-success {
+        background-color: var(--blue);
+        color: var(--gray);
+    }
+
+    &.alert-danger {
+        background-color: #FED7D7;
+        color: #742A2A;
+    }
+}
+
+div.has-error input {
+    border-color: #E53E3E;
+}
