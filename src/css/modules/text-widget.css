@@ -5,4 +5,8 @@
   padding-top: 1rem;
   border-top: 0.5rem solid var(--gold);
   font-weight: 700;
+
+  & p {
+    margin: 0;
+  }
 }
