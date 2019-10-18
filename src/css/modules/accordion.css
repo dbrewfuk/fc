@@ -95,57 +95,59 @@
 
 /* Colored accordion */
 .colored-accordion {
-  .accordion__toggle::before {
-    background-image: svg-load('icon-plus.svg', fill: var(--white));
-  }
+  & .accordion__toggle {
+    &::before {
+      background-image: svg-load('icon-plus.svg', fill: var(--white));
+    }
 
-  .accordion__toggle:nth-of-type(10n - 9) {
-    background-color: #0d1d41;
-    color: #fff;
-  }
+    &:nth-of-type(10n - 9) {
+      background-color: #0d1d41;
+      color: #fff;
+    }
 
-  .accordion__toggle:nth-of-type(10n - 8) {
-    background-color: #00467f;
-    color: #fff;
-  }
+    &:nth-of-type(10n - 8) {
+      background-color: #00467f;
+      color: #fff;
+    }
 
-  .accordion__toggle:nth-of-type(10n - 7) {
-    background-color: #005cb9;
-    color: #fff;
-  }
+    &:nth-of-type(10n - 7) {
+      background-color: #005cb9;
+      color: #fff;
+    }
 
-  .accordion__toggle:nth-of-type(10n - 6) {
-    background-color: #1ab7ea;
-    color: #fff;
-  }
+    &:nth-of-type(10n - 6) {
+      background-color: #1ab7ea;
+      color: #fff;
+    }
 
-  .accordion__toggle:nth-of-type(10n - 5) {
-    background-color: #ffc80b;
-    color: #fff;
-  }
+    &:nth-of-type(10n - 5) {
+      background-color: #ffc80b;
+      color: #fff;
+    }
 
-  .accordion__toggle:nth-of-type(10n - 4) {
-    background-color: #e8a713;
-    color: #fff;
-  }
+    &:nth-of-type(10n - 4) {
+      background-color: #e8a713;
+      color: #fff;
+    }
 
-  .accordion__toggle:nth-of-type(10n - 3) {
-    background-color: #75777b;
-    color: #fff;
-  }
+    &:nth-of-type(10n - 3) {
+      background-color: #75777b;
+      color: #fff;
+    }
 
-  .accordion__toggle:nth-of-type(10n - 2) {
-    background-color: #0d1d41;
-    color: #fff;
-  }
+    &:nth-of-type(10n - 2) {
+      background-color: #0d1d41;
+      color: #fff;
+    }
 
-  .accordion__toggle:nth-of-type(10n - 1) {
-    background-color: #00467f;
-    color: #fff;
-  }
+    &:nth-of-type(10n - 1) {
+      background-color: #00467f;
+      color: #fff;
+    }
 
-  .accordion__toggle:nth-of-type(10n) {
-    background-color: #005cb9;
-    color: #fff;
+    &:nth-of-type(10n) {
+      background-color: #005cb9;
+      color: #fff;
+    }
   }
 }
