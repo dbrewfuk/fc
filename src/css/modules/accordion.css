@@ -93,8 +93,7 @@
   display: block;
 }
 
-
-// Colored accordion
+/* Colored accordion */
 .colored-accordion {
   .accordion__toggle::before {
     background-image: svg-load('icon-plus.svg', fill: var(--white));
