@@ -13,9 +13,6 @@ module.exports = {
     filename: '[name].min.js',
     path: path.resolve(__dirname, 'dist/js'),
   },
-  optimization: {
-    minimizer: []
-  },
   module: {
     rules: [
       {
@@ -109,11 +106,4 @@ if (process.env.NODE_ENV === 'production') {
       },
     }),
   ]);
-
-  module.exports.optimization.minimizer = (module.exports.optimization.minimizer || []).concat([
-    new UglifyJsPlugin({
-      cache: true,
-      parallel: true,
-    }),
-  ])
 }

@@ -8,7 +8,7 @@
     "eslint": "eslint \"src/js/**/*.js\"",
     "lint": "run-s stylelint eslint",
     "deploy": "npm run webpack",
-    "production": "cross-env NODE_ENV=production webpack",
+    "production": "cross-env NODE_ENV=production webpack -p",
     "development": "cross-env NODE_ENV=dev webpack",
     "dev": "npm run development",
     "prod": "npm run production"
