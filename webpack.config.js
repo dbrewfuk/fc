@@ -2,10 +2,6 @@ const path = require('path');
 const webpack = require('webpack');
 const CleanPlugin = require('clean-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-const postcssImport = require('postcss-import');
-const postcssMixins = require('postcss-mixins');
-const postcssCssnext = require('postcss-cssnext');
-const postcssInlineSvg = require('postcss-inline-svg');
 
 module.exports = {
   entry: {
@@ -69,24 +65,11 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              minimize: (process.env.NODE_ENV) === 'production',
               importLoaders: 1,
             },
           },
           {
             loader: 'postcss-loader',
-            options: {
-              ident: 'postcss',
-              plugins: () => [
-                postcssImport(),
-                postcssMixins(),
-                postcssCssnext(),
-                postcssInlineSvg({
-                  path: path.resolve(__dirname, 'img'),
-                }),
-                require('tailwindcss'),
-              ],
-            },
           },
         ],
       },
