@@ -1,5 +1,4 @@
 const path = require('path');
-
 const postcssConfig = {
   indent: 'postcss',
   plugins: [
@@ -7,7 +6,7 @@ const postcssConfig = {
     require('postcss-mixins'),
     require('postcss-cssnext'),
     require('postcss-inline-svg')({
-      path: path.resolve(__dirname, 'img'),
+      paths: [path.resolve(__dirname, 'img')],
     }),
     require('tailwindcss'),
   ],
