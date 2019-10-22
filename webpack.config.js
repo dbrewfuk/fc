@@ -1,15 +1,20 @@
 const path = require('path');
 const webpack = require('webpack');
-const CleanPlugin = require('clean-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
+  mode: process.env === 'production' ? 'production': 'development',
   entry: {
     main: './src/main',
   },
   output: {
     filename: '[name].min.js',
     path: path.resolve(__dirname, 'dist/js'),
+  },
+  optimization: {
+    minimizer: []
   },
   module: {
     rules: [
@@ -60,15 +65,6 @@ module.exports = {
             },
           },
           {
-            loader: 'extract-loader',
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 1,
-            },
-          },
-          {
             loader: 'postcss-loader',
           },
         ],
@@ -92,7 +88,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new CleanPlugin(['dist']),
+    new CleanWebpackPlugin(),
     new BrowserSyncPlugin({
       files: [
         'dist/**/*',
@@ -112,9 +108,12 @@ if (process.env.NODE_ENV === 'production') {
         NODE_ENV: '"production"',
       },
     }),
-    new webpack.optimize.UglifyJsPlugin({
+  ]);
+
+  module.exports.optimization.minimizer = (module.exports.optimization.minimizer || []).concat([
+    new UglifyJsPlugin({
       cache: true,
       parallel: true,
     }),
-  ]);
+  ])
 }
