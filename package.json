@@ -29,7 +29,7 @@
     "normalize.css": "^8.0.0",
     "pretty-error": "^2.1.1",
     "smoothscroll-polyfill": "^0.4.0",
-    "tailwindcss": "^1.0.4",
+    "tailwindcss": "^1.0.0",
     "what-input": "^5.0.4",
     "xml-js": "^1.6.2"
   },
