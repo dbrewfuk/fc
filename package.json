@@ -55,8 +55,8 @@
     "postcss-inline-svg": "^4.0.0",
     "postcss-loader": "^3.0.0",
     "postcss-mixins": "^6.2.0",
-    "stylelint": "^8.4.0",
-    "stylelint-config-standard": "^18.0.0",
+    "stylelint": "^11.0.0",
+    "stylelint-config-standard": "^19.0.0",
     "svgo": "^1.0.3",
     "webpack": "^3.10.0"
   }
