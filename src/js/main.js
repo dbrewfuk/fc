@@ -1,5 +1,3 @@
-import ProxyPolyfill from 'proxy-polyfill/src/proxy';
-
 // utilities
 import 'what-input';
 import './util/focus-within';
