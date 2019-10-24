@@ -1,11 +1,9 @@
 const path = require('path');
 const webpack = require('webpack');
+const CleanPlugin = require('clean-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
-  mode: process.env === 'production' ? 'production': 'development',
   entry: {
     main: './src/main',
   },
@@ -62,7 +60,16 @@ module.exports = {
             },
           },
           {
-            loader: 'postcss-loader',
+            loader: 'extract-loader',
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+            },
+          },
+          {
+            loader: 'postcss-loader'
           },
         ],
       },
@@ -76,7 +83,7 @@ module.exports = {
             presets: [
               ['@babel/preset-env', {
                 useBuiltIns: 'usage',
-				corejs: '3.0.1',
+                corejs: '3.0.1',
               }],
             ],
           },
@@ -85,7 +92,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new CleanWebpackPlugin(),
+    new CleanPlugin(['dist']),
     new BrowserSyncPlugin({
       files: [
         'dist/**/*',
@@ -104,6 +111,10 @@ if (process.env.NODE_ENV === 'production') {
       'process.env': {
         NODE_ENV: '"production"',
       },
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      cache: true,
+      parallel: true,
     }),
   ]);
 }
