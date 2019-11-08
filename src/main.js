@@ -5,6 +5,7 @@ import './html/program.html';
 import './html/gateway.html';
 import './html/landing.html';
 import './html/home.html';
+import './html/home-redesign.html';
 import './html/program-finder.html';
 import './html/program-finder-global.html';
 import './html/test-form.html';
