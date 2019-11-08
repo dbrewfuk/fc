@@ -9,7 +9,7 @@
     color: var(--white);
     z-index: 3;
     @media (--lg) {
-        height: 10rem;
+        height: 9rem;
         background-color: transparent;
         border-top: 2.5rem solid var(--blue);
     }
@@ -58,7 +58,7 @@
         height: 100%;
     }
     @media (--xl) {
-        padding: 0 2rem;
+        padding: 0 1rem;
     }
     @nest .header--collapsed & {
         @media (--lg) {
@@ -335,11 +335,11 @@
         justify-content: space-between;
         position: absolute;
         right: 0;
-        bottom: 1.8rem;
+        bottom: .8rem;
         width: calc(100% * 0.65 + 3rem);
     }
     @media(--xl) {
-        width: calc((100% - 4rem) * 0.65 + 2rem);
+        width: calc((100%) * 0.65 + 2rem);
         font-size: 1.5rem;
     }
     @nest .header--collapsed & {
@@ -368,7 +368,7 @@
         }
     }
 
-    @media (--lg) {
+    @media (--xl) {
         &:last-of-type {
             padding-right: 2rem;
         }
@@ -434,12 +434,12 @@
     @media (--lg) {
         display: inline;
         padding: 0;
-        color: var(--gold);
+        color: var(--white);
         letter-spacing: .03rem;
     }
     &:hover {
         @media (--lg) {
-            border-bottom: 0.2em solid white;
+            border-bottom: 0.2em solid var(--gold);
         }
     }
 }

@@ -55,7 +55,7 @@ module.exports = {
     boxShadow: ['hover', 'focus'],
     fontSmoothing: [],
     fontWeight: ['hover', 'focus'],
-    opacity: [],
+    opacity: ['hover'],
     outline: ['focus'],
     overflow: [],
     stroke: [],
