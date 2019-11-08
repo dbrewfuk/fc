@@ -6,23 +6,48 @@
 <main id="main-content" class="lg:-mt-49">
   {% include "modules/hero-tall-redesign.html" %}
 
-<!--  {% include "modules/splash-redesign.html" %}-->
-
-  {% include "modules/hslider-split.html" %}
-
-  <div class="block block--transparent">
+  <div class="block block--transparent m-8">
     <div class="block__container block__container--narrow">
-      <h3 class="text-center">Quisquam corporis facere, hic tempore.</h3>
-      <p>Voluptatem et libero, expedita ipsa quam totam quos blanditiis eius laborum dolores maiores aut tenetur beatae similique, accusamus sint iusto praesentium sit velit eos, quaerat eaque vero nisi. Esse consequatur ex, quos velit deleniti enim. Officiis.</p>
-      <p class="text-center margin-top"><a href="#" class="button">Explore All Programs</a></p>
+      <h2 class="text-center mt-0">Programs that Work - For You</h2>
+      <p class="text-center">
+        <a href="#" class="button">Explore All Programs</a>
+      </p>
     </div>
   </div>
 
-  {% include "modules/grid-tight.html" %}
+  {% include "modules/grid-tight-redesign.html" %}
 
   {% include "modules/hslider-cta.html" %}
 
-  {% include "modules/split-flip.html" %}
+  <div class="grid-container">
+    <h2 class="text-center">You Can Afford College</h2>
+    <div class="grid grid--tight justify-center">
+      <a class="card card--outline m-4" href="#">
+        <div class="card__image card__image--overlay">
+          <img src="//placehold.it/768x512" alt="placeholder">
+          <h3 class="card__image__overlay">Affording College</h3>
+        </div>
+      </a>
+      <a class="card card--outline m-4" href="#">
+        <div class="card__image card__image--overlay">
+          <img src="//placehold.it/768x512" alt="placeholder">
+          <h3 class="card__image__overlay">Tuition & Costs</h3>
+        </div>
+      </a>
+      <a class="card card--outline m-4" href="#">
+        <div class="card__image card__image--overlay">
+          <img src="//placehold.it/768x512" alt="placeholder">
+          <h3 class="card__image__overlay">Paying For College</h3>
+        </div>
+      </a>
+      <a class="card card--outline m-4" href="#">
+        <div class="card__image card__image--overlay">
+          <img src="//placehold.it/768x512" alt="placeholder">
+          <h3 class="card__image__overlay">Net Price Calculator</h3>
+        </div>
+      </a>
+    </div>
+  </div>
 
   <div class="block block--blue block--clip-tl-br block--tight">
     <h2 class="text-center heading--flush">At Maysville</h2>
@@ -31,10 +56,9 @@
     </div>
   </div>
 
-  {% include "modules/banner.html" %}
-
   {% include "modules/slider-wide.html" %}
 
-  {% include "modules/overlay.html" %}
+  {% include "modules/hslider-split.html" %}
+
 </main>
 {% endblock %}
