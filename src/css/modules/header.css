@@ -442,6 +442,12 @@
             border-bottom: 0.2em solid var(--gold);
         }
     }
+
+    @nest .scrolling-up .header--collapsed & {
+        @media (--lg) {
+            color: var(--blue);
+        }
+    }
 }
 
 .header__menu__button {
