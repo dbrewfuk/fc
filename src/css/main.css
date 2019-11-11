@@ -56,8 +56,15 @@
 /* KCTCS modules */
 
 @import 'modules/tooltip.css';
-
 @import "tailwindcss/utilities";
+
+.clip-left {
+    clip-path: polygon(0 3rem, 3rem 0, 100% 0, 100% calc(100% - 3rem), calc(100% - 3rem) 100%, 0 100%);
+}
+
+.clip-right {
+    clip-path: polygon(0px calc(100% - 3rem), 0px 0px, calc(100% - 3rem) 0px, 100% 50px, 100% 100%, 3rem 100%);
+}
 
 .bg-blue-overlay {
     background-color: rgba(0, 71, 127, .95);
