@@ -11,9 +11,17 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--blue-overlay);
+  background-color: var(--gold-overlay);
   overflow: auto;
   z-index: 4;
+}
+
+.alert.alert--overlay {
+  color: var(--blue-dark);
+
+  & .alert__icon {
+    color: var(--blue-dark);
+  }
 }
 
 .alert__container {
