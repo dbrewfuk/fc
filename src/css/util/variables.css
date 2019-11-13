@@ -13,10 +13,13 @@
   --blue-dark: #013057;
   --blue-overlay: color(var(--blue) alpha(95%));
   --gold: #e7a614;
+  --gold-overlay: color(var(--gold) alpha(95%));
   --white: #fff;
   --gray: #f2f2f2;
   --gray-darker: #ccc;
   --black: #000;
+  --red: #cd0e2c;
+  --red-overlay: color(var(--red) alpha(95%));
   --shadow: color(var(--black) alpha(50%));
 
   /* transitions */
