@@ -34,6 +34,7 @@
 @import 'modules/grid';
 @import 'modules/header';
 @import 'modules/hero';
+@import 'modules/stories/hero';
 @import 'modules/hslider';
 @import 'modules/icon-link';
 @import 'modules/link-list';
@@ -42,6 +43,7 @@
 @import 'modules/next-section';
 @import 'modules/overlay';
 @import 'modules/page-title';
+@import 'modules/stories/page-title';
 @import 'modules/program-finder';
 @import 'modules/slider';
 @import 'modules/splash';

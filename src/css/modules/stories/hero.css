@@ -1,0 +1,166 @@
+.hero__fix__top {
+    height: 100vh;
+    max-height: 48rem;
+
+    @media (--lg) {
+        max-height: 54rem;
+        margin-top: -6.1rem;
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-image: linear-gradient(color(var(--blue) alpha(1%)), var(--blue-overlay));
+        height: 20rem;
+        width: 100%;
+
+        @media (--lg) {
+            background-image: linear-gradient(transparent, var(--blue-overlay) 28rem);
+            height: 30rem;
+        }
+    }
+}
+
+.hero__testimonial-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: var(--white);
+    padding: 1rem;
+    z-index: 1;
+
+    @media (--md) {
+        padding: 3rem 3rem 1.5rem;
+    }
+
+    @media (--lg) {
+        padding: 3rem 6rem 3rem 4rem;
+    }
+}
+
+.hero__testimonial-source {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    margin-left: 2rem;
+    @media (--lg) {
+        margin-left: 6.5rem;
+    }
+}
+
+.hero__testimonial-text {
+    @mixin text-testimonial;
+    margin: 0 0 1rem 2rem;
+    width: 95%;
+
+    @media (--lg) {
+        font-size: 3rem;
+        margin: 0 0 2rem 6.5rem;
+        width: 62%;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -0.6rem;
+        left: 0.5rem;
+        width: 2rem;
+        height: 4rem;
+        background-image: svg-load('icon-quote.svg', fill: var(--gold));
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 2rem 2rem;
+
+        @media (--md) {
+            top: 1.75rem;
+            left: 1.5rem;
+            width: 3rem;
+            height: 3rem;
+            background-size: 3rem 3rem;
+        }
+
+        @media (--lg) {
+            top: 1.5rem;
+            left: 5rem;
+            width: 4rem;
+            height: 4rem;
+            background-size: 4rem 4rem;
+        }
+    }
+}
+
+.hero__testimonial-name {
+    @mixin h4;
+    margin: 0;
+    color: var(--gold);
+    width: 100%;
+
+    @media (--lg) {
+        font-size: 2rem;
+    }
+}
+
+.hero__testimonial-type {
+    margin: 0;
+    width: 100%;
+}
+
+.hero__testimonial-link--container {
+    display: flex;
+    background: transparent;
+    border: none;
+    align-items: center;
+    padding: 0;
+    width: 100%;
+
+    @media (--lg) {
+        justify-content: flex-end;
+        width: 50%;
+    }
+}
+
+.hero__testimonial-link--icon--container {
+    display: block;
+    color: var(--white);
+    background-color: var(--gold);
+    border-radius: 1000px;
+    height: 2rem;
+    width: 2rem;
+    margin: 0 0.75rem 0 0;
+
+    @media (--lg) {
+        height: 4rem;
+        width: 4rem;
+    }
+}
+
+.hero__testimonial-link--icon {
+    height: 1.75rem;
+    width: 1.75rem;
+    margin: .15rem auto;
+
+    @media(--lg) {
+        height: 3rem;
+        width: 3rem;
+        margin: .5rem auto;
+    }
+}
+
+.hero__testimonial-link--text {
+    display: block;
+    position: relative;
+    @mixin text-caption;
+    font-size: .925rem;
+    text-transform: uppercase;
+    margin: 0;
+
+    @media (--lg) {
+        margin: 0;
+    }
+}
