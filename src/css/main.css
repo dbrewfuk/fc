@@ -33,6 +33,7 @@
 @import 'modules/form';
 @import 'modules/ou_forms';
 @import 'modules/grid';
+@import 'modules/stories/grid';
 @import 'modules/header';
 @import 'modules/hero';
 @import 'modules/stories/hero';
