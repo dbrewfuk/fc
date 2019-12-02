@@ -1,0 +1,56 @@
+.card__text-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: var(--white);
+  background-color: var(--blue);
+  padding: 2.5rem 2rem;
+  width: 100%;
+  transition: all var(--transition-double);
+
+  @nest .card:hover > & {
+    opacity: 0;
+  }
+}
+
+.card__text-name {
+  color: var(--gold);
+  margin: 0;
+}
+
+.card__text-type {
+  margin: .25rem 0 0 0;
+}
+
+.card__overlay-container {
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: var(--white);
+  background-color: var(--blue-overlay-light);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 4rem 5rem;
+  transition: all var(--transition-double);
+
+  @nest .card:hover > &, .card:focus > &, .card.focus-within > & {
+    opacity: 1;
+  }
+}
+
+.card__overlay-name {
+  color: var(--gold);
+  margin: 0;
+}
+
+.card__overlay-type {
+  margin: 0 0 1rem;
+}
+
+.card__overlay-text {
+  margin: 0 0 1rem;
+}
