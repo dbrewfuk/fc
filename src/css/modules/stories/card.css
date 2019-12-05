@@ -69,13 +69,13 @@
 
 .card__image__overlay--gold {
   color: var(--gold);
-  left: 18%;
+  left: 16%;
 }
 
 .card__image__overlay--text {
   position: absolute;
   top: 70%;
-  left: 18%;
+  left: 16%;
   max-width: 80%;
   margin: 0;
   -webkit-transform: translateY(-50%);
