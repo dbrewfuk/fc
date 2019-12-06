@@ -4,15 +4,17 @@ const videoModalCloseButton = document.querySelector('.video__modal--close-butto
 const videoContainer = document.querySelector('.video__modal .video__modal--video-container');
 
 buttons.forEach(button => {
-  button.addEventListener('click', event => {
-    event.preventDefault();
+  if (button.getAttribute('href') === "javascript:void(0);" || button.nodeName === "BUTTON") {
+    button.addEventListener('click', event => {
+      event.preventDefault();
 
-    let videoUrl = event.currentTarget.getAttribute('data-url');
-    if (videoUrl !== null) {
-      videoContainer.innerHTML = `<iframe src="${videoUrl}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
-      videoModal.style.display = 'block';
-    }
-  })
+      let videoUrl = event.currentTarget.getAttribute('data-url');
+      if (videoUrl !== null) {
+        videoContainer.innerHTML = `<iframe src="${videoUrl}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+        videoModal.style.display = 'block';
+      }
+    })
+  }
 });
 
 if (videoModalCloseButton !== null) {
