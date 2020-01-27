@@ -20,3 +20,4 @@ import './modules/vslider';
 import './modules/ou';
 import './modules/program-finder-global';
 import './modules/button';
+import './modules/stories';

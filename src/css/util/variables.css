@@ -12,6 +12,7 @@
   --blue: #00467f;
   --blue-dark: #013057;
   --blue-overlay: color(var(--blue) alpha(95%));
+  --blue-overlay-light: color(var(--blue) alpha(75%));
   --gold: #e7a614;
   --white: #fff;
   --gray: #f2f2f2;
