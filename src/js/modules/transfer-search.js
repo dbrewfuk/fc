@@ -5,7 +5,7 @@ prgrmSearchBar.addEventListener("keyup", function() {programSearch(prgrmSearchBa
 
 function programSearch(term) {
     term = term.toLowerCase();
-    for (var i = 0; i &lt; programs.length; i++) {
+    for (var i = 0; i < programs.length; i++) {
         var program = programs[i].innerText.toLowerCase();
         // Not possible match
         if (program.search(term) == -1) {
