@@ -21,3 +21,4 @@ import './modules/ou';
 import './modules/program-finder-global';
 import './modules/button';
 import './modules/stories';
+import './modules/transfer-search'
