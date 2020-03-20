@@ -1,10 +1,14 @@
 let sortUp = document.getElementById("ou_orderAsc");
 let sortDown = document.getElementById("ou_orderDesc");
 
-sortUp.src = "https://webassets.kctcs.edu/_resources/images/newsSortUp.gif";
-sortDown.src = "https://webassets.kctcs.edu/_resources/images/newsSortDown.gif";
-
-document.getElementById("ou_feed").addEventListener("onclick", function(){
+if (sortUp != null) {
     sortUp.src = "https://webassets.kctcs.edu/_resources/images/newsSortUp.gif";
     sortDown.src = "https://webassets.kctcs.edu/_resources/images/newsSortDown.gif";
-})
+    
+    while (true) {
+        if (sortUp.src != "https://webassets.kctcs.edu/_resources/images/newsSortUp.gif") {
+            sortUp.src = "https://webassets.kctcs.edu/_resources/images/newsSortUp.gif";
+            sortDown.src = "https://webassets.kctcs.edu/_resources/images/newsSortDown.gif";
+        }
+    }
+}
