@@ -52,10 +52,14 @@
 
 .splash__title {
   margin: 1rem 0 2rem;
-  font-size: 4.85rem;
+  font-size: 6.5rem;
 
   @media (--xl) {
     width: 65%;
+  }
+
+  @media (max-width: 653px) {
+    font-size: 3.2rem;
   }
 }
 
