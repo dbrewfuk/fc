@@ -3,7 +3,7 @@ const canvas = document.querySelector('.canvas');
 const header = document.querySelector('.header');
 
 // Show background when hovering over menu in desktop view only
-const container = document.querySelector('.header__nav');
+const container = document.querySelector('.header');
 if (container !== null) {
     container.addEventListener('mouseenter', () => {
         if (window.innerWidth >= 1024) {
