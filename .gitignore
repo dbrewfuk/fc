@@ -2,3 +2,4 @@ node_modules/
 .idea
 dist/
 .vs/
+.DS_Store

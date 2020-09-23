@@ -2,6 +2,22 @@
 const canvas = document.querySelector('.canvas');
 const header = document.querySelector('.header');
 
+// Show background when hovering over menu in desktop view only
+const container = document.querySelector('.header--transparent');
+if (container !== null) {
+    container.addEventListener('mouseenter', () => {
+        if (window.innerWidth >= 1024) {
+            document.querySelector('.header--transparent').style.backgroundColor = '#013057';
+        }
+    });
+
+    container.addEventListener('mouseleave', () => {
+        if (window.innerWidth >= 1024) {
+            document.querySelector('.header--transparent').style.backgroundColor = '';
+        }
+    });
+}
+
 const watch = function watch() {
     const headerOffset = parseInt(getComputedStyle(canvas).getPropertyValue('padding-top'), 10);
     const scroll = document.body.scrollTop || document.documentElement.scrollTop;

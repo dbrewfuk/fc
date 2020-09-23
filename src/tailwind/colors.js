@@ -16,4 +16,8 @@ module.exports = {
     default: '#f2f2f2',
     darker: '#ccc',
   },
+
+  red: {
+    default: '#cd0e2c',
+  },
 };

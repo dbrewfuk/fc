@@ -10,6 +10,10 @@ module.exports = {
     },
 
     spacing: {
+      sm: '32em',
+      md: '48em',
+      lg: '64em',
+      xl: '80em',
       px: '1px',
       '0': '0',
       '1': '0.25rem',
@@ -27,11 +31,26 @@ module.exports = {
       '32': '8rem',
       '40': '10rem',
       '48': '12rem',
+      '52': '14rem',
+      '56': '16rem',
+      '60': '18rem',
+      '64': '20rem',
+      '68': '22rem',
     },
 
     extend: {
+      margin: {
+        '-49': '-13.5rem',
+      },
       maxHeight: {
         '48': '12rem',
+      },
+      zIndex: {
+        '1': '1',
+        '2': '2',
+        '3': '3',
+        '4': '4',
+        '5': '5',
       },
     }
   },
@@ -45,7 +64,7 @@ module.exports = {
     boxShadow: ['hover', 'focus'],
     fontSmoothing: [],
     fontWeight: ['hover', 'focus'],
-    opacity: [],
+    opacity: ['hover'],
     outline: ['focus'],
     overflow: [],
     stroke: [],

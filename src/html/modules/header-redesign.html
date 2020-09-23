@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{{ page.title }} - KCTCS Template Suite</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700">
+    <link rel="stylesheet" href="css/main.min.css">
+  </head>
+  <body>
+    {% if page.alert %}
+      {% include "modules/alert.html" %}
+    {% endif %}
+    {% if page.alertOverlay %}
+      {% include "modules/alert-overlay.html" %}
+    {% endif %}
+
+    <nav class="skip" aria-labelledby="skip"><a id="skip" href="#main-content">skip to main content</a></nav>
+    <div class="canvas">
+      <header class="header {% if page.header %}header--{{ page.header }}{% endif %}">
+        <div class="header__container">
+          <a class="header__logo" href="#">
+            <span class="hide">Maysville Community &amp; Technical College</span>
+            {{ svg('logo-maysville', 'header__logo__large') }}
+            {{ svg('logo-maysville-text', 'header__logo__small') }}
+          </a>
+          <a class="button button--white button--shrink header__button" href="#">Start Your Application</a>
+          <button class="header__menu-toggle"><span class="hide">Open Navigation</span></button>
+          <div class="header__menu">
+            <button class="header__menu__close"><span class="hide">Close Navigation</span></button>
+            <form class="header__search">
+              <label for="header-search" class="header__search__label">Search</label>
+              <input id="header-search" class="header__search__input" type="search" placeholder="What are you looking for?">
+              <button class="header__search__button" type="submit">
+                <span class="hide">Search</span>
+                {{ svg('icon-search') }}
+              </button>
+            </form>
+            <ul class="header__nav">
+              <li class="header__nav__item"><a href="#" class="header__nav__link">About</a></li>
+              <li class="header__nav__item"><a href="#" class="header__nav__link">Education &amp; Training</a></li>
+              <li class="header__nav__item"><a href="#" class="header__nav__link">Admissions</a></li>
+              <li class="header__nav__item"><a href="#" class="header__nav__link">Affording College</a></li>
+              <div id="nav-hover"></div>
+            </ul>
+
+            <ul class="header__utility">
+              <li class="header__utility__item"><a href="#" class="header__utility__link">My Path</a></li>
+              <li class="header__utility__item"><a href="#" class="header__utility__link">Job Seekers</a></li>
+              <li class="header__utility__item"><a href="#" class="header__utility__link">Workforce Solutions</a></li>
+              <li class="header__utility__item"><a href="#" class="header__utility__link">Giving</a></li>
+              <li class="header__utility__item">
+                <a href="#" class="header__utility__link">Quick Links</a>
+              </li>
+            </ul>
+            <a href="#" class="button button--white header__menu__button">Start Your Application</a>
+          </div>
+        </div>
+      </header>
