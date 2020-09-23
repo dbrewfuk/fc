@@ -3,17 +3,17 @@ const canvas = document.querySelector('.canvas');
 const header = document.querySelector('.header');
 
 // Show background when hovering over menu in desktop view only
-const container = document.querySelector('.header');
+const container = document.querySelector('.header--transparent');
 if (container !== null) {
     container.addEventListener('mouseenter', () => {
         if (window.innerWidth >= 1024) {
-            document.querySelector('.header').style.backgroundColor = '#00467f';
+            document.querySelector('.header--transparent').style.backgroundColor = '#013057';
         }
     });
 
     container.addEventListener('mouseleave', () => {
         if (window.innerWidth >= 1024) {
-            document.querySelector('.header').style.backgroundColor = '';
+            document.querySelector('.header--transparent').style.backgroundColor = '';
         }
     });
 }
