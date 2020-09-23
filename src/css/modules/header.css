@@ -10,8 +10,13 @@
     z-index: 3;
     @media (--lg) {
         height: 9rem;
-        background-color: transparent;
         border-top: 2.5rem solid var(--blue);
+    }
+}
+
+.header--transparent {
+    @media(--lg) {
+        background-color: transparent;
     }
 }
 
