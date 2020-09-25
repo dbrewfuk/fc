@@ -3,6 +3,6 @@
     padding-top: 8.25rem;
     overflow: hidden;
     @media (--lg) {
-        padding-top: 16rem;
+        padding-top: 14rem;
     }
 }
