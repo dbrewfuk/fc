@@ -19,6 +19,9 @@
     background-color: var(--white);
     color: var(--blue);
   }
+  &:focus {
+    border-width:.125rem;background-color:#fff;color:#00467f
+  }
 }
 
 .button--auto {
@@ -104,3 +107,4 @@
   color: transparent;
   display: none;
 }
+
