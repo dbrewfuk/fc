@@ -80,7 +80,6 @@
 .page-title--no-margin {
     margin-top: 0;
 }
-
 .page-title--no-margin::before {
     display: none;
 }
