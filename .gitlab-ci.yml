@@ -6,7 +6,7 @@ stages:
 Publish CSS:
   stage: Build and Publish
   script:
-    - npm install
+    - npm install --legacy-peer-deps
     - npm run prod
     - node deploy/css.js "$CI_COMMIT_MESSAGE"
   artifacts:
@@ -24,7 +24,7 @@ Publish CSS:
 Publish JS:
   stage: Build and Publish
   script:
-    - npm install
+    - npm install --legacy-peer-deps
     - npm run prod
     - node deploy/js.js "$CI_COMMIT_MESSAGE"
   artifacts:
