@@ -76,3 +76,12 @@
     @mixin h6;
     margin: 0 0 1rem;
 }
+
+.page-title--no-margin {
+    margin-top: 0;
+}
+
+.page-title--no-margin::before {
+    display: none;
+}
+
