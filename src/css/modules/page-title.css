@@ -78,7 +78,7 @@
 }
 
 .page-title--no-margin {
-    margin-top: 0;
+    margin-top: 24px;
 }
 .page-title--no-margin::before {
     display: none;
