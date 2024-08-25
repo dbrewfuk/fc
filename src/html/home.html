@@ -1,40 +1,45 @@
-{% set page = { title: 'Home', header: 'transparent', alert: true, alertOverlay: true } %}
+{% set page = { title: 'Home', header: 'default', alert: false, alertOverlay: false } %}
 
 {% extends "templates/default.html" %}
 
 {% block body %}
 <main id="main-content">
   {% include "modules/hero-tall.html" %}
-  
-  {% include "modules/splash.html" %}
-  
-  {% include "modules/hslider-split.html" %}
-  
-  <div class="block block--transparent">
-    <div class="block__container block__container--narrow">
-      <h3 class="text-center">Quisquam corporis facere, hic tempore.</h3>
-      <p>Voluptatem et libero, expedita ipsa quam totam quos blanditiis eius laborum dolores maiores aut tenetur beatae similique, accusamus sint iusto praesentium sit velit eos, quaerat eaque vero nisi. Esse consequatur ex, quos velit deleniti enim. Officiis.</p>
-      <p class="text-center margin-top"><a href="#" class="button">Explore All Programs</a></p>
+  <div class="block block--blue block--clip-tl-br block--tight" style="margin-top:-48px;">
+    <h2 class="text-center heading--flush">At Kentucky State Fire Commission</h2>
+    <div class="block__container">
+      {% include "modules/tabs-alt.html" %}
+    </div>
+  </div>
+  <div class="block" id="block-tabs">
+    <div class="block__container">
+      <h3 class="text-center">Quick Links</h3>
+      <div class="grid">
+        {% for i in [0, 1, 2] %}
+        {% include "modules/card-large.html" %}
+        {% endfor %}
+      </div>
+      <h3 class="text-center">Explore Resources</h3>
+      {% include "modules/tabs.html" %}
     </div>
   </div>
   
-  {% include "modules/grid-tight.html" %}
+ 
+  
+  {% include "modules/hslider-split.html" %}
+  
+
+  
+
   
   {% include "modules/hslider-cta.html" %}
   
   {% include "modules/split-flip.html" %}
   
-  <div class="block block--blue block--clip-tl-br block--tight">
-    <h2 class="text-center heading--flush">At Maysville</h2>
-    <div class="block__container">
-      {% include "modules/tabs-alt.html" %}
-    </div>
-  </div>
+  
   
   {% include "modules/banner.html" %}
   
-  {% include "modules/slider-wide.html" %}
   
-  {% include "modules/overlay.html" %}
 </main>
 {% endblock %}

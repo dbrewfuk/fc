@@ -9,7 +9,7 @@
   --sans-serif: 'Work Sans', sans-serif;
 
   /* colors */
-  --blue: #00467f;
+  --blue: #0a395f;
   --blue-dark: #013057;
   --blue-overlay: color(var(--blue) alpha(95%));
   --blue-overlay-light: color(var(--blue) alpha(75%));
